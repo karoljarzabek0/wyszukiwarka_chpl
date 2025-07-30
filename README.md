@@ -7,6 +7,7 @@
 - zaimportowanie treści wszystkich ulotek i ChPL-ów
 - stworzenie systemu kwerend dla wstawiania i wyszukiwania rekordów (z grupowaniem)
 - stworzenie skryptu codziennie aktualizującego dane
+- zintegrowanie skryptów z Airflow
 
 
 ### ▶️ Podstawowa funkcjonalność strony (Astro)
