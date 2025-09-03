@@ -1,0 +1,13 @@
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="chpl.svg" />
+		<title>Wyszukiwarka ChPL</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename="styles.css")}}">
+		<script src="{{ url_for('static', filename="script.js")}}"></script>
+	</head>
+	<body>
+		{% block content %}{% endblock  %}
+	</body>
+</html>
