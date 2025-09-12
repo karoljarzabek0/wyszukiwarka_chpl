@@ -18,8 +18,23 @@ def pdf_to_text(url):
                 text += '\n'
         # Usuń znaczniki stron i ich szum
         text = re.sub(r"\n\d+\s*\n", "[[NOWA_STRONA]]\n", text)
+        #text = re.sub(r"\n\d+\s*\n", "\n", text)
+
         # Usuń puste miejsca
-        text = re.sub(r"\n\s*\n", "\n[[PUSTE_SPACJE]]\n", text)
+        #text = re.sub(r"\n\s*\n", "\n[[PUSTE_SPACJE]]\n", text)
+        text = re.sub(r"\n\s*\n", "\n", text)
+
+        # Popraw nagłówki
+        text = re.sub(r"\d\s*\n", " ", text)
+        text = re.sub(r"\.\s*\n", ". ", text)
+        #text = re.sub(r"\d\s*\n", "", text)
+
+        # Usuń podwójne spacje
+        #text = re.sub(r" {2}", "[[2x spacja]]", text)
+        text = re.sub(r" {2}", " ", text)
+
+        # Popraw punktory
+        text = re.sub(r"^•\s*$\n?", "• ", text, flags=re.MULTILINE)
         with open("test.txt", "w") as txt:
             txt.write(text)
 

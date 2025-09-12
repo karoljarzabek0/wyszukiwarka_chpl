@@ -1,202 +1,100 @@
-1 
-CHARAKTERYSTYKA PRODUKTU LECZNICZEGO 
-[[PUSTE_SPACJE]]
-1. 
-NAZWA PRODUKTU LECZNICZEGO 
-[[PUSTE_SPACJE]]
+ CHARAKTERYSTYKA PRODUKTU LECZNICZEGO 
+1. NAZWA PRODUKTU LECZNICZEGO 
 Edelan, 1 mg/g, krem 
-[[PUSTE_SPACJE]]
-2. 
-SKŁAD JAKOŚCIOWY I ILOŚCIOWY 
-[[PUSTE_SPACJE]]
-Każdy g kremu zawiera 1 mg mometazonu furoinianu (Mometasoni furoas). 
-[[PUSTE_SPACJE]]
-Pełny wykaz substancji pomocniczych, patrz punkt 6.1. 
-[[PUSTE_SPACJE]]
-3. 
-POSTAĆ FARMACEUTYCZNA 
-[[PUSTE_SPACJE]]
+2. SKŁAD JAKOŚCIOWY I ILOŚCIOWY 
+Każdy g kremu zawiera 1 mg mometazonu furoinianu (Mometasoni furoas). Pełny wykaz substancji pomocniczych, patrz punkt 6.1. 3. POSTAĆ FARMACEUTYCZNA 
 Krem 
-Biały lub prawie biały, gładki, jednolity krem. 
-[[PUSTE_SPACJE]]
-4. 
-SZCZEGÓŁOWE DANE KLINICZNE  
-[[PUSTE_SPACJE]]
-4.1 
-Wskazania do stosowania 
-[[PUSTE_SPACJE]]
+Biały lub prawie biały, gładki, jednolity krem. 4. SZCZEGÓŁOWE DANE KLINICZNE 
+4. Wskazania do stosowania 
 Produkt leczniczy Edelan w postaci kremu jest wskazany do stosowania miejscowego w łagodzeniu 
 objawów zapalnych i świądu, w reagujących na leczenie kortykosteroidami dermatozach, takich jak 
-łuszczyca i atopowe zapalenie skóry. 
-[[PUSTE_SPACJE]]
-4.2 
-Dawkowanie i sposób podawania  
-[[PUSTE_SPACJE]]
+łuszczyca i atopowe zapalenie skóry. 4. Dawkowanie i sposób podawania 
 Dawkowanie 
-[[PUSTE_SPACJE]]
 Cienką warstwę produktu leczniczego Edelan krem nanosić na chorobowo zmienione miejsca na 
-skórze raz na dobę.  
-[[PUSTE_SPACJE]]
-Dzieci w wieku poniżej 2 lat: 
+skórze raz na dobę. Dzieci w wieku poniżej 2 lat: 
 Nie ma wystarczających danych dotyczących bezpieczeństwa stosowania produktu leczniczego 
-u dzieci w wieku poniżej 2 lat. 
-[[PUSTE_SPACJE]]
-Sposób podawania 
-[[PUSTE_SPACJE]]
-Podanie na skórę. 
-[[PUSTE_SPACJE]]
-4.3 
-Przeciwwskazania 
-[[PUSTE_SPACJE]]
+u dzieci w wieku poniżej 2 lat. Sposób podawania 
+Podanie na skórę. 4. Przeciwwskazania 
 Nie stosować produktu leczniczego Edelan krem gdy u pacjenta występuje: 
-• 
-nadwrażliwość na substancję czynną, inne kortykosteroidy lub na którąkolwiek substancję 
+• nadwrażliwość na substancję czynną, inne kortykosteroidy lub na którąkolwiek substancję 
 pomocniczą wymienioną w punkcie 6.1, 
-• 
-trądzik pospolity, 
-• 
-trądzik różowaty, 
-• 
-zapalenie skóry wokół ust, 
-• 
-zanik skóry, 
-• 
-zakażenia bakteryjne (np. liszajec, ropne zapalenie skóry), wirusowe (np. opryszczka zwykła, 
+• trądzik pospolity, 
+• trądzik różowaty, 
+• zapalenie skóry wokół ust, 
+• zanik skóry, 
+• zakażenia bakteryjne (np. liszajec, ropne zapalenie skóry), wirusowe (np. opryszczka zwykła, 
 półpasiec i ospa wietrzna, brodawki zwykłe, kłykciny kończyste, mięczak zakaźny), 
 pasożytnicze i grzybicze skóry (np. wywołane przez dermatofity lub drożdżaki), 
-• 
-odczyny poszczepienne, 
+• odczyny poszczepienne, 
 [[NOWA_STRONA]]
-• 
-gruźlica skóry, 
-• 
-kiłowe zmiany skórne, 
-• 
-świąd w okolicy odbytu i narządów płciowych, 
-• 
-pieluszkowe zapalenie skóry, 
-• 
-uszkodzona i pokryta owrzodzeniami skóra. 
-[[PUSTE_SPACJE]]
-4.4 
-Specjalne ostrzeżenia i środki ostrożności dotyczące stosowania 
-[[PUSTE_SPACJE]]
+• gruźlica skóry, 
+• kiłowe zmiany skórne, 
+• świąd w okolicy odbytu i narządów płciowych, 
+• pieluszkowe zapalenie skóry, 
+• uszkodzona i pokryta owrzodzeniami skóra. 4. Specjalne ostrzeżenia i środki ostrożności dotyczące stosowania 
 Jeśli po zastosowaniu produktu leczniczego Edelan krem wystąpią objawy podrażnienia lub reakcja 
-alergiczna, należy go natychmiast odstawić. 
-Jeśli wystąpi zakażenie, należy zastosować odpowiednie leczenie przeciwbakteryjne lub 
+alergiczna, należy go natychmiast odstawić. Jeśli wystąpi zakażenie, należy zastosować odpowiednie leczenie przeciwbakteryjne lub 
 przeciwgrzybicze. W przypadku braku szybkiej i pozytywnej reakcji na leczenie, należy przerwać 
-stosowanie kortykosteroidu aż do czasu wyleczenia zakażenia. 
-[[PUSTE_SPACJE]]
-Wchłanianie do organizmu kortykosteroidów podawanych miejscowo, może wywołać odwracalne 
+stosowanie kortykosteroidu aż do czasu wyleczenia zakażenia. Wchłanianie do organizmu kortykosteroidów podawanych miejscowo, może wywołać odwracalne 
 zahamowanie czynności osi podwzgórze-przysadka-nadnercza z potencjalnym niedoborem 
 glikokortykosteroidu po odstawieniu produktu leczniczego. U niektórych pacjentów wchłanianie do 
 organizmu kortykosteroidów podawanych miejscowo, może również wywołać objawy zespołu 
 Cushinga, hiperglikemię i cukromocz. Pacjenci stosujący kortykosteroidy miejscowo na dużą 
 powierzchnię skóry lub pod opatrunek okluzyjny, powinni być poddani okresowej kontroli w kierunku 
-objawów zahamowania czynności osi podwzgórze-przysadka-nadnercza. 
-[[PUSTE_SPACJE]]
-U dzieci, ze względu na większy niż u dorosłych stosunek powierzchni ciała do masy istnieje większe 
+objawów zahamowania czynności osi podwzgórze-przysadka-nadnercza. U dzieci, ze względu na większy niż u dorosłych stosunek powierzchni ciała do masy istnieje większe 
 prawdopodobieństwo podatności na toksyczność ogólnoustrojową podczas stosowania równoważnych 
-dawek produktu leczniczego. 
-[[PUSTE_SPACJE]]
-Po długotrwałym i stałym stosowaniu na dużej powierzchni uszkodzonej skóry, fałdach skórnych 
+dawek produktu leczniczego. Po długotrwałym i stałym stosowaniu na dużej powierzchni uszkodzonej skóry, fałdach skórnych 
 i pod opatrunkiem okluzyjnym, stwierdzono częste występowanie toksyczności miejscowej 
 i ogólnoustrojowej. Opatrunków okluzyjnych nie należy stosować u dzieci lub na skórę twarzy. Jeśli 
-konieczne jest nałożenie produktu leczniczego na twarz, leczenie powinno trwać maksymalnie 5 dni. 
-U wszystkich pacjentów, niezależnie od wieku, należy unikać długotrwałej stałej terapii. 
-[[PUSTE_SPACJE]]
-Edelan należy stosować ostrożnie u dzieci w wieku 2 lat lub starszych, choć nie zbadano 
-bezpieczeństwa stosowania ani skuteczności produktu leczniczego przez okres dłuższy niż 3 tygodnie. 
-Nie zaleca się stosowania produktu leczniczego Edelan u dzieci w wieku poniżej 2 lat, gdyż nie 
-określono bezpieczeństwa stosowania ani skuteczności produktu leczniczego w tej grupie wiekowej. 
-[[PUSTE_SPACJE]]
-Należy stosować najmniejszą skuteczną dawkę produktu leczniczego zawierającego kortykosteroidy, 
+konieczne jest nałożenie produktu leczniczego na twarz, leczenie powinno trwać maksymalnie 5 dni. U wszystkich pacjentów, niezależnie od wieku, należy unikać długotrwałej stałej terapii. Edelan należy stosować ostrożnie u dzieci w wieku 2 lat lub starszych, choć nie zbadano 
+bezpieczeństwa stosowania ani skuteczności produktu leczniczego przez okres dłuższy niż 3 tygodnie. Nie zaleca się stosowania produktu leczniczego Edelan u dzieci w wieku poniżej 2 lat, gdyż nie 
+określono bezpieczeństwa stosowania ani skuteczności produktu leczniczego w tej grupie wiekowej. Należy stosować najmniejszą skuteczną dawkę produktu leczniczego zawierającego kortykosteroidy, 
 pozwalającą na złagodzenie objawów choroby, zwłaszcza u dzieci. Przewlekłe leczenie 
-kortykosteroidami może zaburzać wzrost i rozwój dzieci. 
-[[PUSTE_SPACJE]]
-Edelan podawany miejscowo nie jest przeznaczony do leczenia okulistycznego (w tym również 
+kortykosteroidami może zaburzać wzrost i rozwój dzieci. Edelan podawany miejscowo nie jest przeznaczony do leczenia okulistycznego (w tym również 
 w obrębie powiek) ze względu na bardzo rzadkie ryzyko wystąpienia jaskry prostej lub zaćmy 
-podtorebkowej. 
-[[PUSTE_SPACJE]]
-Szczególnie ostrożnie stosować u pacjentów z łuszczycą, gdyż miejscowe stosowanie 
+podtorebkowej. Szczególnie ostrożnie stosować u pacjentów z łuszczycą, gdyż miejscowe stosowanie 
 kortykosteroidów w łuszczycy może być niebezpieczne, m.in. ze względu na nawrót choroby 
 spowodowany rozwojem tolerancji, ryzyko wystąpienia uogólnionej łuszczycy krostkowej i ogólne 
-działania toksyczne spowodowane zaburzeniem ciągłości skóry. 
-[[PUSTE_SPACJE]]
-Tak jak w przypadku innych silnie działających glikokortykosteroidów stosowanych miejscowo, 
+działania toksyczne spowodowane zaburzeniem ciągłości skóry. Tak jak w przypadku innych silnie działających glikokortykosteroidów stosowanych miejscowo, 
 należy unikać nagłego zaprzestania leczenia. Po nagłym odstawieniu produktu zawierającego silnie 
 działające glikokortykosteroidy może wystąpić efekt „z odbicia”, objawiający się stanem zapalnym 
 skóry, nasilonym zaczerwienieniem, pieczeniem i kłującym bólem. Można temu zapobiec poprzez 
 stopniowe zmniejszanie dawki produktu leczniczego, np. przed odstawieniem produktu należy 
-prowadzić leczenie w sposób przerywany. 
-[[PUSTE_SPACJE]]
-[[NOWA_STRONA]]
+prowadzić leczenie w sposób przerywany. [[NOWA_STRONA]]
 Glikokortykosteroidy mogą zmieniać wygląd niektórych zmian chorobowych, co może utrudniać 
-postawienie właściwej diagnozy, mogą również opóźniać gojenie się ran. 
-[[PUSTE_SPACJE]]
-Zaburzenie widzenia 
+postawienie właściwej diagnozy, mogą również opóźniać gojenie się ran. Zaburzenie widzenia 
 Zaburzenie widzenia może wystąpić w wyniku ogólnoustrojowego i miejscowego stosowania 
 kortykosteroidów. Jeżeli u pacjenta wystąpią takie objawy, jak nieostre widzenie lub inne zaburzenia 
 widzenia, należy rozważyć skierowanie go do okulisty w celu ustalenia możliwych przyczyn, do 
 których może należeć zaćma, jaskra lub rzadkie choroby, takie jak centralna chorioretinopatia 
 surowicza (CSCR), którą notowano po ogólnoustrojowym i miejscowym stosowaniu 
-kortykosteroidów. 
-[[PUSTE_SPACJE]]
-4.5 
-Interakcje z innymi produktami leczniczymi i inne rodzaje interakcji 
-[[PUSTE_SPACJE]]
-Brak danych. 
-[[PUSTE_SPACJE]]
-4.6 
-Wpływ na płodność, ciążę i laktację 
-[[PUSTE_SPACJE]]
+kortykosteroidów. 4. Interakcje z innymi produktami leczniczymi i inne rodzaje interakcji 
+Brak danych. 4. Wpływ na płodność, ciążę i laktację 
 W czasie ciąży i podczas karmienia piersią leczenie produktem leczniczym Edelan powinno być 
 prowadzone wyłącznie na polecenie lekarza. Należy unikać nakładania produktu leczniczego na dużą 
-powierzchnię ciała lub przez dłuższy okres czasu. 
-[[PUSTE_SPACJE]]
-Ciąża 
+powierzchnię ciała lub przez dłuższy okres czasu. Ciąża 
 Nie ma wystarczających danych dotyczących bezpieczeństwa stosowania produktu leczniczego 
-u kobiet w ciąży. 
-[[PUSTE_SPACJE]]
-Miejscowe podawanie kortykosteroidów ciężarnym zwierzętom może być przyczyną nieprawidłowości 
-rozwoju płodowego, w tym rozszczepu podniebienia i wewnątrzmacicznego opóźnienia wzrastania płodu. 
-[[PUSTE_SPACJE]]
-Nie przeprowadzono odpowiednich i dobrze kontrolowanych badań dotyczących stosowania produktu 
-leczniczego u kobiet w ciąży, zatem ryzyko wystąpienia takiego wpływu na ludzki płód jest nieznane. 
-Podobnie jak w przypadku wszystkich miejscowo stosowanych glikokortykosteroidów należy wziąć pod 
+u kobiet w ciąży. Miejscowe podawanie kortykosteroidów ciężarnym zwierzętom może być przyczyną nieprawidłowości 
+rozwoju płodowego, w tym rozszczepu podniebienia i wewnątrzmacicznego opóźnienia wzrastania płodu. Nie przeprowadzono odpowiednich i dobrze kontrolowanych badań dotyczących stosowania produktu 
+leczniczego u kobiet w ciąży, zatem ryzyko wystąpienia takiego wpływu na ludzki płód jest nieznane. Podobnie jak w przypadku wszystkich miejscowo stosowanych glikokortykosteroidów należy wziąć pod 
 uwagę prawdopodobieństwo ograniczenia wzrostu płodowego w wyniku przeniknięcia 
-glikokortykosteroidu przez barierę łożyska. 
-[[PUSTE_SPACJE]]
-Produkt leczniczy Edelan i wszystkie inne glikokortykosteroidy podawane miejscowo należy stosować 
+glikokortykosteroidu przez barierę łożyska. Produkt leczniczy Edelan i wszystkie inne glikokortykosteroidy podawane miejscowo należy stosować 
 u kobiet w ciąży tylko wtedy, jeśli potencjalne korzyści z leczenia uzasadniają ryzyko dla matki lub 
-płodu. 
-[[PUSTE_SPACJE]]
-Karmienie piersią 
+płodu. Karmienie piersią 
 Nie wiadomo czy miejscowe podawanie kortykosteroidów mogłoby spowodować wchłanianie 
 ogólnoustrojowe wystarczające do wytworzenia wykrywalnych ilości produktu leczniczego w mleku 
 kobiecym. Edelan można stosować u matek karmiących piersią tylko po starannym rozważeniu stosunku 
 korzyści do ryzyka z leczenia. Jeśli wskazane jest stosowanie większych dawek lub długotrwała terapia, 
-należy przerwać karmienie piersią. 
-[[PUSTE_SPACJE]]
-4.7 
-Wpływ na zdolność prowadzenia pojazdów i obsługiwania maszyn 
-[[PUSTE_SPACJE]]
-Edelan nie ma wpływu na zdolność prowadzenia pojazdów i obsługiwania maszyn. 
-[[PUSTE_SPACJE]]
-4.8 
-Działania niepożądane 
-[[PUSTE_SPACJE]]
+należy przerwać karmienie piersią. 4. Wpływ na zdolność prowadzenia pojazdów i obsługiwania maszyn 
+Edelan nie ma wpływu na zdolność prowadzenia pojazdów i obsługiwania maszyn. 4. Działania niepożądane 
 Częstości występowania określono następująco: 
 bardzo często (≥1/10), często (≥1/100 do <1/10), niezbyt często (≥1/1000 do <1/100), rzadko 
 (≥1/10 000 do <1/1000), bardzo rzadko (<1/10 000) lub częstość nieznana (nie może być określona na 
-podstawie dostępnych danych). 
-[[PUSTE_SPACJE]]
-Tabela 1. Działania niepożądane związane z leczeniem mometazonu furoinianem pogrupowane 
+podstawie dostępnych danych). Tabela 1. Działania niepożądane związane z leczeniem mometazonu furoinianem pogrupowane 
 [[NOWA_STRONA]]
 według układów i narządów oraz częstości występowania: 
-[[PUSTE_SPACJE]]
 Klasyfikacja układów i narządów 
-Działania niepożądane  
+Działania niepożądane 
 Zakażenia i zarażenia pasożytnicze 
 Częstość nieznana: 
 Zakażenia, czyrak 
@@ -221,25 +119,17 @@ stosowania
 Zaburzenia oka 
 Częstość nieznana: 
 Nieostre widzenie (patrz także punkt 4.4) 
-[[PUSTE_SPACJE]]
 Podczas miejscowego stosowania innych kortykosteroidów obserwowano następujące objawy 
 niepożądane w miejscu podania: suchą skórę, podrażnienie, zapalenie skóry wokół ust, kontaktowe 
 zapalenie skóry, macerację skóry, potówki i teleangiektazje. Objawy te mogą również wystąpić po 
-zastosowaniu produktu Edelan krem. 
-[[PUSTE_SPACJE]]
-Po stosowaniu produktu leczniczego na dużą powierzchnię skóry czy przez dłuższy okres czasu, 
+zastosowaniu produktu Edelan krem. Po stosowaniu produktu leczniczego na dużą powierzchnię skóry czy przez dłuższy okres czasu, 
 szczególnie w przypadku użycia opatrunków okluzyjnych, mometazonu furoinian wchłaniał się do 
-krążenia ogólnego. 
-U dzieci, ze względu na większy niż u dorosłych stosunek powierzchni ciała do jego masy, istnieje 
+krążenia ogólnego. U dzieci, ze względu na większy niż u dorosłych stosunek powierzchni ciała do jego masy, istnieje 
 większe prawdopodobieństwo wystąpienia zaburzeń czynności osi podwzgórze-przysadka-nadnercza 
-i zespołu Cushinga, wywołanych ogólnoustrojowym działaniem kortykosteroidów. 
-[[PUSTE_SPACJE]]
-Wszystkie działania niepożądane, jakie występują po podaniu kortykosteroidów o działaniu ogólnym, 
+i zespołu Cushinga, wywołanych ogólnoustrojowym działaniem kortykosteroidów. Wszystkie działania niepożądane, jakie występują po podaniu kortykosteroidów o działaniu ogólnym, 
 w tym zahamowanie czynności kory nadnerczy, mogą również wystąpić po miejscowym zastosowaniu 
 kortykosteroidów. Dotyczy to szczególnie dzieci i niemowląt, u których mogą wystąpić dodatkowo 
-zaburzenia wzrostu i rozwoju (patrz punkt 4.4). 
-[[PUSTE_SPACJE]]
-Zgłaszanie podejrzewanych działań niepożądanych 
+zaburzenia wzrostu i rozwoju (patrz punkt 4.4). Zgłaszanie podejrzewanych działań niepożądanych 
 Po dopuszczeniu produktu leczniczego do obrotu istotne jest zgłaszanie podejrzewanych działań 
 niepożądanych. Umożliwia to nieprzerwane monitorowanie stosunku korzyści do ryzyka stosowania 
 produktu leczniczego. Osoby należące do fachowego personelu medycznego powinny zgłaszać 
@@ -249,76 +139,36 @@ Wyrobów Medycznych i Produktów Biobójczych
 [[NOWA_STRONA]]
 Al. Jerozolimskie 181C 
 02-222 Warszawa 
-Tel.: + 48 22 49 21 301 
-Faks: + 48 22 49 21 309 
-e-mail: ndl@urpl.gov.pl 
-Działania niepożądane można zgłaszać również podmiotowi odpowiedzialnemu. 
-[[PUSTE_SPACJE]]
-4.9 
-Przedawkowanie 
-[[PUSTE_SPACJE]]
+Tel.: + 48 22 49 21 30 Faks: + 48 22 49 21 30 e-mail: ndl@urpl.gov.pl 
+Działania niepożądane można zgłaszać również podmiotowi odpowiedzialnemu. 4. Przedawkowanie 
 Długotrwałe miejscowe stosowanie kortykosteroidów może doprowadzić do zahamowania czynności 
 osi podwzgórze-przysadka-nadnercza, powodując wtórną niewydolność nadnerczy, która zwykle jest 
-odwracalna. 
-[[PUSTE_SPACJE]]
-Jeżeli stwierdzi się zahamowanie osi podwzgórze-przysadka-nadnercza, należy stopniowo zaprzestać 
+odwracalna. Jeżeli stwierdzi się zahamowanie osi podwzgórze-przysadka-nadnercza, należy stopniowo zaprzestać 
 stosowania produktu leczniczego Edelan, zmniejszyć częstość podawania produktu leczniczego lub 
-zastąpić kortykosteroidem o słabszym działaniu. 
-Zawartość kortykosteroidu w każdym opakowaniu jest mała, dzięki czemu w razie przypadkowego 
-połknięcia produktu leczniczego nie wywoła on toksyczności lub będzie ona niewielka. 
-[[PUSTE_SPACJE]]
-W przypadku przedawkowania produktu leczniczego Edelan, należy rozpocząć ogólne leczenie 
+zastąpić kortykosteroidem o słabszym działaniu. Zawartość kortykosteroidu w każdym opakowaniu jest mała, dzięki czemu w razie przypadkowego 
+połknięcia produktu leczniczego nie wywoła on toksyczności lub będzie ona niewielka. W przypadku przedawkowania produktu leczniczego Edelan, należy rozpocząć ogólne leczenie 
 objawowe oraz leczenie wspomagające i kontynuować je tak długo, jak będzie to konieczne. Ostre 
 objawy przedawkowania kortykosteroidów są zwykle odwracalne. Jeśli to konieczne, należy 
 wyrównać stężenie elektrolitów. W przypadku przewlekłego zatrucia zaleca się stopniowe odstawianie 
-kortykosteroidu. 
-[[PUSTE_SPACJE]]
-5. 
-WŁAŚCIWOŚCI FARMAKOLOGICZNE 
-[[PUSTE_SPACJE]]
-5.1 
-Właściwości farmakodynamiczne 
-[[PUSTE_SPACJE]]
+kortykosteroidu. 5. WŁAŚCIWOŚCI FARMAKOLOGICZNE 
+5. Właściwości farmakodynamiczne 
 Grupa farmakoterapeutyczna: kortykosteroidy do stosowania miejscowego o silnym działaniu, 
-kod ATC: D07AC13 
-[[PUSTE_SPACJE]]
-Mometazonu furoinian jest silnie działającym kortykosteroidem. 
-[[PUSTE_SPACJE]]
-Mometazonu furoinian w kremie po zastosowaniu na skórę wykazuje miejscowe działanie 
-przeciwzapalne, przeciwświądowe i obkurczające naczynia krwionośne. 
-Mechanizm działania przeciwzapalnego miejscowo stosowanych kortykosteroidów nie jest w pełni 
-poznany. 
-[[PUSTE_SPACJE]]
-Badania wykonane w celu oceny zdolności obkurczania naczyń przez mometazonu furoinian w maści 
+kod ATC: D07AC1 Mometazonu furoinian jest silnie działającym kortykosteroidem. Mometazonu furoinian w kremie po zastosowaniu na skórę wykazuje miejscowe działanie 
+przeciwzapalne, przeciwświądowe i obkurczające naczynia krwionośne. Mechanizm działania przeciwzapalnego miejscowo stosowanych kortykosteroidów nie jest w pełni 
+poznany. Badania wykonane w celu oceny zdolności obkurczania naczyń przez mometazonu furoinian w maści 
 i kremie, w porównaniu do innych kortykosteroidów wykazały, że mometazonu furoinian ma równie 
 silne lub silniejsze działanie, jak walerianian betametazonu, acetonid triamcynolonu dipropionian 
-betametazonu i acetonid fluocinolonu. 
-[[PUSTE_SPACJE]]
-Badania zmian zapalnych wywołanych promieniami UV z zastosowaniem spektroskopii odbiciowej 
+betametazonu i acetonid fluocinolonu. Badania zmian zapalnych wywołanych promieniami UV z zastosowaniem spektroskopii odbiciowej 
 wykazały, że mometazonu furoinian (0,1% krem) w porównaniu z preparatami zawierającymi 
 walerianian betametazonu (0,1% krem) lub dipropionian betametazonu (0,1% krem) silniej obkurczał 
-naczynia krwionośne. Działanie to trwało nawet do 24 godzin. 
-[[PUSTE_SPACJE]]
-5.2 
-Właściwości farmakokinetyczne 
-[[PUSTE_SPACJE]]
+naczynia krwionośne. Działanie to trwało nawet do 24 godzin. 5. Właściwości farmakokinetyczne 
 W celu oznaczenia u ludzi wchłaniania przezskórnego i występującego w jego następstwie wydalania 
-mometazonu furoinianu, podawano maść i krem zawierające mometazonu furoinian znakowany 3H. 
-Z badań wynika, że w czasie ośmiogodzinnego kontaktu z nieuszkodzoną skórą zdrowych ochotników 
+mometazonu furoinianu, podawano maść i krem zawierające mometazonu furoinian znakowany 3H. Z badań wynika, że w czasie ośmiogodzinnego kontaktu z nieuszkodzoną skórą zdrowych ochotników 
 (bez zastosowania opatrunku okluzyjnego) wchłonęło się przez skórę około 0,7% mometazonu 
-furoinianu z maści i około 0,4% z kremu. 
-[[NOWA_STRONA]]
-5.3 
-Przedkliniczne dane o bezpieczeństwie 
-[[PUSTE_SPACJE]]
-Brak istotnych klinicznie danych poza wymienionymi w Charakterystyce Produktu Leczniczego. 
-[[PUSTE_SPACJE]]
-6. 
-DANE FARMACEUTYCZNE 
-[[PUSTE_SPACJE]]
-6.1 
-Wykaz substancji pomocniczych 
-[[PUSTE_SPACJE]]
+furoinianu z maści i około 0,4% z kremu. [[NOWA_STRONA]]
+5. Przedkliniczne dane o bezpieczeństwie 
+Brak istotnych klinicznie danych poza wymienionymi w Charakterystyce Produktu Leczniczego. 6. DANE FARMACEUTYCZNE 
+6. Wykaz substancji pomocniczych 
 Glikol heksylenowy 
 Woda oczyszczona 
 Wosk biały 
@@ -327,61 +177,20 @@ Tytanu dwutlenek (E 171)
 Glinu oktenylobursztynian skrobi 
 Kwas fosforowy rozcieńczony 
 Wazelina biała zawierająca all-rac-α-tokoferol 
-[[PUSTE_SPACJE]]
-6.2 
-Niezgodności farmaceutyczne 
-[[PUSTE_SPACJE]]
-Nie dotyczy. 
-[[PUSTE_SPACJE]]
-6.3 
-Okres ważności 
-[[PUSTE_SPACJE]]
-2 lata. 
-[[PUSTE_SPACJE]]
-Okres ważności po pierwszym otwarciu tuby: 12 tygodni. 
-[[PUSTE_SPACJE]]
-6.4 
-Specjalne środki ostrożności podczas przechowywania 
-[[PUSTE_SPACJE]]
-Brak specjalnych zaleceń dotyczących przechowywania produktu leczniczego. 
-Nie przechowywać w lodówce ani nie zamrażać. 
-[[PUSTE_SPACJE]]
-6.5 
-Rodzaj i zawartość opakowania 
-[[PUSTE_SPACJE]]
+6. Niezgodności farmaceutyczne 
+Nie dotyczy. 6. Okres ważności 
+2 lata. Okres ważności po pierwszym otwarciu tuby: 12 tygodni. 6. Specjalne środki ostrożności podczas przechowywania 
+Brak specjalnych zaleceń dotyczących przechowywania produktu leczniczego. Nie przechowywać w lodówce ani nie zamrażać. 6. Rodzaj i zawartość opakowania 
 Tuba aluminiowa pokryta lateksem z zakrętką z HDPE, zawierająca 15 g lub 30 g kremu, 
-umieszczona w tekturowym pudełku. 
-[[PUSTE_SPACJE]]
-Nie wszystkie wielkości opakowań muszą znajdować się w obrocie. 
-[[PUSTE_SPACJE]]
-6.6 
-Specjalne środki ostrożności dotyczące usuwania i przygotowania produktu leczniczego do 
+umieszczona w tekturowym pudełku. Nie wszystkie wielkości opakowań muszą znajdować się w obrocie. 6. Specjalne środki ostrożności dotyczące usuwania i przygotowania produktu leczniczego do 
 stosowania 
-[[PUSTE_SPACJE]]
-Bez specjalnych wymagań. 
-[[PUSTE_SPACJE]]
-7. 
-PODMIOT ODPOWIEDZIALNY POSIADAJĄCY POZWOLENIE NA 
+Bez specjalnych wymagań. 7. PODMIOT ODPOWIEDZIALNY POSIADAJĄCY POZWOLENIE NA 
 DOPUSZCZENIE DO OBROTU 
-[[PUSTE_SPACJE]]
 Zakłady Farmaceutyczne POLPHARMA SA 
-ul. Pelplińska 19 
-83-200 Starogard Gdański 
-[[PUSTE_SPACJE]]
+ul. Pelplińska 1 83-200 Starogard Gdański 
 [[NOWA_STRONA]]
-8. 
-NUMER POZWOLENIA NA DOPUSZCZENIE DO OBROTU 
-[[PUSTE_SPACJE]]
-Pozwolenie nr 20899 
-[[PUSTE_SPACJE]]
-9. 
-DATA WYDANIA PIERWSZEGO POZWOLENIA NA DOPUSZCZENIE DO OBROTU 
+8. NUMER POZWOLENIA NA DOPUSZCZENIE DO OBROTU 
+Pozwolenie nr 2089 9. DATA WYDANIA PIERWSZEGO POZWOLENIA NA DOPUSZCZENIE DO OBROTU 
 I DATA PRZEDŁUŻENIA POZWOLENIA 
-[[PUSTE_SPACJE]]
-Data wydania pierwszego pozwolenia na dopuszczenie do obrotu: 17.01.2013 r. 
-Data ostatniego przedłużenia pozwolenia: 02.05.2018 r. 
-[[PUSTE_SPACJE]]
-10. 
-DATA ZATWIERDZENIA LUB CZĘŚCIOWEJ ZMIANY TEKSTU 
+Data wydania pierwszego pozwolenia na dopuszczenie do obrotu: 17.01.2013 r. Data ostatniego przedłużenia pozwolenia: 02.05.2018 r. 10. DATA ZATWIERDZENIA LUB CZĘŚCIOWEJ ZMIANY TEKSTU 
 CHARAKTERYSTYKI PRODUKTU LECZNICZEGO 
-[[PUSTE_SPACJE]]
