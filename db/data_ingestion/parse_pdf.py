@@ -16,6 +16,14 @@ def pdf_to_text(url):
             for page in doc:
                 text += page.get_text()
                 text += '\n'
+        # Usuń znaczniki stron i ich szum
+        text = re.sub(r"\n\d+\s*\n", "[[NOWA_STRONA]]\n", text)
+        # Usuń puste miejsca
+        text = re.sub(r"\n\s*\n", "\n[[PUSTE_SPACJE]]\n", text)
+        with open("test.txt", "w") as txt:
+            txt.write(text)
+
+        
 
             return text
     else:
@@ -39,11 +47,6 @@ def save_temp_text(url):
                 text = page.extract_text()
                 full_text += text
                 full_text += '\n'
-                # print(f"Page {i + 1}")
-                # if text:
-                #     print(f"Page {i + 1}:\n{text}\n{'='*40}")
-                # else:
-                #     print(f"Page {i + 1}: No text found.\n{'='*40}")
             print(f"SUCCESS | URL: {url}")
         with open("test.txt", "w") as file:
             file.write(full_text)
@@ -82,34 +85,13 @@ def extract_sections(text, url):
 
 def parseToPlainText(url: str) -> dict:
     char_text = pdf_to_text(url)
-    char_sections = extract_sections(char_text, url)
-    return char_sections, char_text
-
+    return char_text
 
 def main():
     url = "https://rejestry.ezdrowie.gov.pl/api/rpl/medicinal-products/2/characteristic"
 
-    sections, text = parseToPlainText(url)
-    print(f"Type of extions variable {type(sections)}")
-    for key, value in sections.items():
-        print(key)
-        print("--------")
-        print(value)
-        print("--------")
+    text = parseToPlainText(url)
+    print(text[:100])
 
-
-
-    # sections = {
-    #     "nazwa_produktu_leczniczego": r"1\. NAZWA PRODUKTU LECZNICZEGO\s*(.*?)\s*(?=\d\.|$)",
-    #     "sklad": r"2\. SKŁAD JAKOŚCIOWY I ILOŚCIOWY\s*(.*?)\s*(?=\d\.|$)",
-    #     "postac_farmaceutyczna": r"3\. POSTAĆ FARMACEUTYCZNA\s*(.*?)\s*(?=\d\.|$)",
-    #     "wskazania_do_stosowania": r"4\. SZCZEGÓŁOWE DANE KLINICZNE\s*4\.1\s*Wskazania do stosowania\s*(.*?)\s*(?=4\.2|$)",
-    #     "dawkowanie_sposob_podania": r"4\.2 Dawkowanie i sposób podawania\s*(.*?)\s*(?=4\.3|$)",
-    #     "przeciwwskazania": r"4\.3 Przeciwwskazania\s*(.*?)\s*(?=4\.4|$)",
-    #     "ostrzezenia": r"4\.4 Specjalne ostrzeżenia i środki ostrożności dotyczące stosowania\s*(.*?)\s*(?=4\.5|$)",
-    #     "interakcje": r"4\.5 Interakcje z innymi produktami leczniczymi i inne rodzaje interakcji\s*(.*?)\s*(?=4\.6|$)",
-    #     "dzialania_niepozadane": r"4\.8 Działania niepożądane\s*(.*?)\s*(?=4\.9|$)",
-    #     "przedawkowanie": r"4\.9 Przedawkowanie\s*(.*?)\s*(?=5\.|$)",
-    #     "wlasciwosci_farmakologiczne": r"5\. WŁAŚCIWOŚCI FARMAKOLOGICZNE\s*(.*?)\s*(?=6\.|$)",
-    #     "dane_farmaceutyczne": r"6\. DANE FARMACEUTYCZNE\s*(.*?)\s*(?=7\.|$)",
-    # }
+if __name__ == "__main__":
+    main()
