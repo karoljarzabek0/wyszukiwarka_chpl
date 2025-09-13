@@ -1,5 +1,7 @@
 from transformers import AutoTokenizer
 from sentence_transformers import SentenceTransformer
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 print("Imported transfromers")
 
 # model = SentenceTransformer(
@@ -39,10 +41,19 @@ def chunk_text(sample_text: str = "", chunk_size: int = 800, overlap: int = 100)
         print(f"Chunk size: {i}")
     return chunks
 
-chunks = chunk_text(text)
+text_splitter = RecursiveCharacterTextSplitter(
+    # Set a really small chunk size, just to show.
+    chunk_size=1000,
+    chunk_overlap=200,
+    length_function=len,
+    is_separator_regex=True,
+)
+chunks = text_splitter.create_documents([text])
+
+# chunks = chunk_text(text)
 for chunk in chunks:
     print(chunk)
-    print(f"Length of chunk in chars: {len(chunk)}")
+    print(f"Length of chunk in chars: {len(chunk.page_content)}")
     print("------")
 
 
