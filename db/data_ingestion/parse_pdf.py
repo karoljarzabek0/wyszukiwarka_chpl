@@ -22,11 +22,12 @@ def pdf_to_text(url):
 
         # Usuń puste miejsca
         #text = re.sub(r"\n\s*\n", "\n[[PUSTE_SPACJE]]\n", text)
-        text = re.sub(r"\n\s*\n", "\n", text)
-        text = re.sub(r"\s*\n", "\n", text)
+        text = re.sub(r"\n\s*\n", r"\n", text)
+        text = re.sub(r"\s*\n", r"\n", text)
         # Popraw nagłówki
         #text = re.sub(r"\d\s*\n", " ", text)
-        text = re.sub(r"\.\s*\n", ". ", text)
+        text = re.sub(r"\.(\d)\s*\n", r".\1 ", text)
+        text = re.sub(r"(\d)\.\s*\n", r"\1. ", text)
         #text = re.sub(r"\d\s*\n", "", text)
 
         # Usuń podwójne spacje
