@@ -7,11 +7,7 @@ import xml.etree.ElementTree as ET
 
 load_dotenv()
 
-DB_HOST = "192.168.0.22"
-DB_PORT = "5432"
-DB_NAME = "rejestr_lekow_db"
-DB_USER = "postgres"
-DB_PASSWORD = os.getenv("DB_PASSWORD")
+
 
 def connect_psql():
     try:
