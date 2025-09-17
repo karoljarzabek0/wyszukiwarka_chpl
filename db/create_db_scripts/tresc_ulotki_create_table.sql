@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS tresc_ulotki
     ) STORED
 );
 
+CREATE INDEX IF NOT EXISTS idx_tresc_ulotki_fts
+    ON tresc_ulotki USING GIN (fts_vector);
+
 CREATE OR REPLACE FUNCTION insert_tresc_ulotki(
     p_id_produktu integer,
     p_tresc_ulotki text

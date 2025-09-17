@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS tresc_chpl
     ) STORED
 );
 
+CREATE INDEX IF NOT EXISTS idx_tresc_chpl_fts
+    ON tresc_chpl USING GIN (fts_vector);
+
 CREATE OR REPLACE FUNCTION insert_tresc_chpl(
     p_id_produktu integer,
     p_tresc_chpl text
