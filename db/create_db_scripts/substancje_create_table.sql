@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS substancje
-(
+(   id_substancji SERIAL PRIMARY KEY,
     id_produktu integer NOT NULL,
+    FOREIGN KEY (id_produktu) REFERENCES leki(id_produktu) ON DELETE CASCADE,
     nazwa_substancji VARCHAR(255),
     ilosc_substancji VARCHAR(100),
     jednostka_miary_ilosci_substancji VARCHAR(100),

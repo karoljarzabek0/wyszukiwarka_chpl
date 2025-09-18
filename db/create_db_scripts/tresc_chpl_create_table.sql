@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS tresc_chpl
 (
     id_produktu integer NOT NULL,
+    FOREIGN KEY (id_produktu) REFERENCES leki(id_produktu) ON DELETE CASCADE,
     tresc_chpl TEXT,
     fts_vector tsvector GENERATED ALWAYS AS (
     to_tsvector('simple', coalesce(tresc_chpl, ''))
