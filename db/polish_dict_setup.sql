@@ -1,12 +1,15 @@
 CREATE TEXT SEARCH DICTIONARY pl_ispell (
-  Template = ispell,
+  TEMPLATE = ispell,
   DictFile = polish,
-  AffFile = polish,
-  StopWords = polish
+  AffFile  = polish,
+  StopWords = polish   
 );
 
-CREATE TEXT SEARCH CONFIGURATION pl_ispell(parser = default);
+-- Create config with default parser
+CREATE TEXT SEARCH CONFIGURATION polishv2 ( PARSER = default );
 
-ALTER TEXT SEARCH CONFIGURATION pl_ispell
-  ALTER MAPPING FOR asciiword, asciihword, hword_asciipart, word, hword, hword_part
-  WITH pl_ispell;
+-- Chain ispell with simple: first try ispell, fallback to simple
+ALTER TEXT SEARCH CONFIGURATION polishv2
+  ALTER MAPPING FOR asciiword, asciihword, hword_asciipart,
+                     word, hword, hword_part, numword
+  WITH pl_ispell, simple;
