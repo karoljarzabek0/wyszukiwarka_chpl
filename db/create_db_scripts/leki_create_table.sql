@@ -1,9 +1,9 @@
 CREATE TABLE leki (
-    id_produktu SERIAL PRIMARY KEY,
-    nazwa_produktu VARCHAR(255) NOT NULL,
+    id_produktu integer NOT NULL PRIMARY KEY,
+    nazwa_produktu TEXT NOT NULL,
     rodzaj_preparatu VARCHAR(255), -- ludzki, zwierzęcy
-    nazwa_powszechna VARCHAR(255),
-    moc VARCHAR(255),
+    nazwa_powszechna TEXT,
+    moc TEXT,
     nazwa_postaci_farmaceutycznej VARCHAR(255),
     podmiot_odpowiedzialny VARCHAR(255),
     typ_procedury VARCHAR(255),
@@ -18,10 +18,11 @@ CREATE TABLE leki (
     kraj_wytwórcy_importera VARCHAR(100)
 );
 CREATE OR REPLACE FUNCTION insert_leki(
-    p_nazwa_produktu VARCHAR(255),
+    p_id_produktu integer,
+    p_nazwa_produktu TEXT,
     p_rodzaj_preparatu VARCHAR(255),
-    p_nazwa_powszechna VARCHAR(255),
-    p_moc VARCHAR(255),
+    p_nazwa_powszechna TEXT,
+    p_moc TEXT,
     p_nazwa_postaci_farmaceutycznej VARCHAR(255),
     p_podmiot_odpowiedzialny VARCHAR(255),
     p_typ_procedury VARCHAR(255),
@@ -37,7 +38,7 @@ CREATE OR REPLACE FUNCTION insert_leki(
 )
 RETURNS void AS $$
 BEGIN
-    INSERT INTO leki (nazwa_produktu, rodzaj_preparatu, nazwa_powszechna, moc, nazwa_postaci_farmaceutycznej, podmiot_odpowiedzialny, typ_procedury, waznosc_pozwolenia, podstawa_prawna, zakaz_stosowania_zwierzeta, ulotka, charakterystyka, kod_ATC, droga_podania, nazwa_wytwórcy_importera, kraj_wytwórcy_importera)
-    VALUES (p_nazwa_produktu, p_rodzaj_preparatu, p_nazwa_powszechna, p_moc, p_nazwa_postaci_farmaceutycznej, p_podmiot_odpowiedzialny, p_typ_procedury, p_waznosc_pozwolenia, p_podstawa_prawna, p_zakaz_stosowania_zwierzeta, p_ulotka, p_charakterystyka, p_kod_ATC, p_droga_podania, p_nazwa_wytwórcy_importera, p_kraj_wytwórcy_importera);
+    INSERT INTO leki (id_produktu, nazwa_produktu, rodzaj_preparatu, nazwa_powszechna, moc, nazwa_postaci_farmaceutycznej, podmiot_odpowiedzialny, typ_procedury, waznosc_pozwolenia, podstawa_prawna, zakaz_stosowania_zwierzeta, ulotka, charakterystyka, kod_ATC, droga_podania, nazwa_wytwórcy_importera, kraj_wytwórcy_importera)
+    VALUES (p_id_produktu, p_nazwa_produktu, p_rodzaj_preparatu, p_nazwa_powszechna, p_moc, p_nazwa_postaci_farmaceutycznej, p_podmiot_odpowiedzialny, p_typ_procedury, p_waznosc_pozwolenia, p_podstawa_prawna, p_zakaz_stosowania_zwierzeta, p_ulotka, p_charakterystyka, p_kod_ATC, p_droga_podania, p_nazwa_wytwórcy_importera, p_kraj_wytwórcy_importera);
 END;
 $$ LANGUAGE plpgsql;

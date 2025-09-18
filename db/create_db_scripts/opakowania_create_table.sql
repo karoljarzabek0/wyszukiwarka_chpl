@@ -12,7 +12,7 @@ CREATE TABLE opakowania (
     rodzaj_opakowania VARCHAR(50),
     pojemnosc VARCHAR(50),
     jednostka_pojemnosci VARCHAR(50),
-    informacje_dodatkowe VARCHAR(255)
+    informacje_dodatkowe TEXT
 );
 CREATE OR REPLACE FUNCTION insert_opakowania(
     p_id_produktu integer,
@@ -26,7 +26,7 @@ CREATE OR REPLACE FUNCTION insert_opakowania(
     p_rodzaj_opakowania VARCHAR(50),
     p_pojemnosc VARCHAR(50),
     p_jednostka_pojemnosci VARCHAR(50),
-    p_informacje_dodatkowe VARCHAR(255)
+    p_informacje_dodatkowe TEXT
 )
 RETURNS VOID AS $$
 BEGIN
