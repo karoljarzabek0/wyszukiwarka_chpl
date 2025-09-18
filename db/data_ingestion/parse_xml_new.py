@@ -17,6 +17,7 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 def get_xml_data():
+    logging.info("Fetching XML data...")
     response = requests.get("https://rejestry.ezdrowie.gov.pl/api/rpl/medicinal-products/public-pl-report/6.0.0/overall.xml")
     NAMESPACE = {"ns": "http://rejestry.ezdrowie.gov.pl/rpl/eksport-danych-v6.0.0"}
     xml_file = io.BytesIO(response.content)
@@ -61,16 +62,18 @@ def get_psql_cursor():
 #     nazwa_wytwórcy_importera VARCHAR(255),
 #     kraj_wytwórcy_importera VARCHAR(100)
 # );
-def main():
+def main(cur, conn):
     xml_file, NAMESPACE, total_products = get_xml_data()
     xml_file.seek(0)
-    with tqdm(total=total_products, desc="Przetwarzenie XML", unit="produktów") as pbar:
+
+    with tqdm.tqdm(total=total_products, desc="Przetwarzenie XML", unit="produktów") as pbar:
         for event, elem in ET.iterparse(xml_file, events=('start', 'end')):
-            # if i % 10 == 0:
-            #     os.system('clear')
-            # Process the product when we hit the 'end' event for a product
             if event == 'end' and f"{{{NAMESPACE['ns']}}}produktLeczniczy" in elem.tag:
-                characteristics = ""
+                id_produktu = None
+                nazwa_produktu = None
+                moc = None
+                ulotka = None
+                charakterystyka = None
                 # Pierwszy segement
                 id_produktu = elem.get("id")
                 nazwa_produktu = elem.get("nazwaProduktu")
@@ -85,21 +88,174 @@ def main():
                 zakaz_stosowania_zwierzeta = elem.get("zakazStosowaniaUZwierzat")
                 ulotka = elem.get("ulotka")
                 charakterystyka = elem.get("charakterystyka")
-                
+
                 # Drugi segment
                 kod_atc = elem.find('.//ns:kodyATC/ns:kodATC', NAMESPACE)
                 kod_atc = kod_atc.text if kod_atc is not None else None
                 droga_podania = elem.find('.//ns:drogiPodania/ns:drogaPodania', NAMESPACE)
-                droga_podania = droga_podania.find("drogaPodaniaNazwa") if droga_podania is not None else None
+                droga_podania = droga_podania.get("drogaPodaniaNazwa") if droga_podania is not None else None
 
                 # Trzeci segment
-                nazwa_wytwórcy_importera = elem.find('.//ns:daneOWytworcy/ns:wytworcy', NAMESPACE)
-                kraj_wytwórcy_importera = nazwa_wytwórcy_importera.find("krajWytworcyImportera") if nazwa_wytwórcy_importera is not None else None
-                nazwa_wytwórcy_importera = nazwa_wytwórcy_importera.find("nazwaWytworcyImportera") if nazwa_wytwórcy_importera is not None else None
-
+                wytworcy_elem = elem.find('.//ns:daneOWytworcy/ns:wytworcy', NAMESPACE)
+                if wytworcy_elem is not None:
+                    nazwa_wytwórcy_importera = wytworcy_elem.get("nazwaWytworcyImportera")
+                    kraj_wytwórcy_importera = wytworcy_elem.get("krajWytworcyImportera")
+                else:
+                    nazwa_wytwórcy_importera = None
+                    kraj_wytwórcy_importera = None
                 logging.info(f"Parsed XML for ID: {id_produktu}")
-                
+
+                # Wstaw do tabeli leki
+                if False:
+                    cur.execute("""--sql 
+                                SELECT insert_leki(
+                                    %(id_produktu)s,
+                                    %(nazwa_produktu)s,
+                                    %(rodzaj_preparatu)s,
+                                    %(nazwa_powszechna)s,
+                                    %(moc)s,
+                                    %(nazwa_postaci_farmaceutycznej)s,
+                                    %(podmiot_odpowiedzialny)s,
+                                    %(typ_procedury)s,
+                                    %(waznosc_pozwolenia)s,
+                                    %(podstawa_prawna)s,
+                                    %(zakaz_stosowania_zwierzeta)s,
+                                    %(ulotka)s,
+                                    %(charakterystyka)s,
+                                    %(kod_atc)s,
+                                    %(droga_podania)s,
+                                    %(nazwa_wytwórcy_importera)s,
+                                    %(kraj_wytwórcy_importera)s
+                                );
+                                """, {
+                                    'id_produktu': id_produktu,
+                                    'nazwa_produktu': nazwa_produktu,
+                                    'rodzaj_preparatu': rodzaj_preparatu,
+                                    'nazwa_powszechna': nazwa_powszechna,
+                                    'moc': moc,
+                                    'nazwa_postaci_farmaceutycznej': nazwa_postaci_farmaceutycznej,
+                                    'podmiot_odpowiedzialny': podmiot_odpowiedzialny,
+                                    'typ_procedury': typ_procedury,
+                                    'waznosc_pozwolenia': waznosc_pozwolenia,
+                                    'podstawa_prawna': podstawa_prawna,
+                                    'zakaz_stosowania_zwierzeta': zakaz_stosowania_zwierzeta,
+                                    'ulotka': ulotka,
+                                    'charakterystyka': charakterystyka,
+                                    'kod_atc': kod_atc,
+                                    'droga_podania': droga_podania,
+                                    'nazwa_wytwórcy_importera': nazwa_wytwórcy_importera,
+                                    'kraj_wytwórcy_importera': kraj_wytwórcy_importera
+                                    })
+                else:
+                    print("-----------------------------")
+                    print(f"id_produktu: {id_produktu}\n nazwa_produktu: {nazwa_produktu}\n rodzaj_preparatu: {rodzaj_preparatu}\n nazwa_powszechna: {nazwa_powszechna}\n moc: {moc}\n nazwa_postaci_farmaceutycznej: {nazwa_postaci_farmaceutycznej}\n podmiot_odpowiedzialny: {podmiot_odpowiedzialny}\n typ_procedury: {typ_procedury}\n waznosc_pozwolenia: {waznosc_pozwolenia}\n podstawa_prawna: {podstawa_prawna}\n zakaz_stosowania_zwierzeta: {zakaz_stosowania_zwierzeta}\n ulotka: {ulotka}\n charakterystyka: {charakterystyka}\n kod_atc: {kod_atc}\n droga_podania: {droga_podania}\n nazwa_wytwórcy_importera: {nazwa_wytwórcy_importera}\n kraj_wytwórcy_importera: {kraj_wytwórcy_importera}\n")
+                    
+                    ##############################################
+                    # Ekstrakcja substancji czynnych
+                    # CREATE TABLE IF NOT EXISTS substancje
+                    # (   id_substancji SERIAL PRIMARY KEY,
+                    #     id_produktu integer NOT NULL,
+                    #     FOREIGN KEY (id_produktu) REFERENCES leki(id_produktu) ON DELETE CASCADE,
+                    #     nazwa_substancji VARCHAR(255),
+                    #     ilosc_substancji VARCHAR(100),
+                    #     jednostka_miary_ilosci_substancji VARCHAR(100),
+                    #     ilosc_preparatu VARCHAR(100),
+                    #     jednostka_miar_ilosci_preparatu VARCHAR(50),
+                    #     informacje_dodatkowe TEXT
+                    # );
+
+                    active_substances_data = []
+
+                    for substance in elem.findall('.//ns:substancjeCzynne/ns:substancjaCzynna', NAMESPACE):
+                        active_substances_data.append({
+                            'id_produktu': id_produktu,  # Link the active substance to the product
+                            'nazwa_substancji': substance.get('nazwaSubstancji'),
+                            'ilosc_substancji': substance.get('iloscSubstancji'),
+                            'jednostka_miary_ilosci_substancji': substance.get('jednostkaMiaryIlosciSubstancji'),
+                            'ilosc_preparatu': substance.get('iloscPreparatu'),
+                            'jednostka_miar_ilosci_preparatu': substance.get('jednostkaMiaryIlosciPreparatu'),
+                            'informacje_dodatkowe': substance.get('informacje_dodatkowe')
+                        })
+
+                    for substance in active_substances_data:
+                        if False:
+                            cur.execute("""--sql
+                                        SELECT insert_substancje(
+                                            %(id_produktu)s,
+                                            %(nazwa_substancji)s,
+                                            %(ilosc_substancji)s,
+                                            %(jednostka_miary_ilosci_substancji)s,
+                                            %(ilosc_preparatu)s,
+                                            %(jednostka_miar_ilosci_preparatu)s,
+                                            %(informacje_dodatkowe)s
+                                        );
+                                        """, substance)
+                        else:
+                            print(substance)
+                    
+                    # Ekstrakcja opakowań
+                #     CREATE TABLE opakowania (
+                #     id_opakowania SERIAL PRIMARY KEY,
+                #     id_produktu integer NOT NULL,
+                #     FOREIGN KEY (id_produktu) REFERENCES leki(id_produktu) ON DELETE CASCADE,
+                #     kod_gtin VARCHAR(50),
+                #     kategoria_dostepnosci VARCHAR(255),
+                #     skasowane VARCHAR(50),
+                #     numerEU VARCHAR(50),
+                #     dystrybutor_rownolegly VARCHAR(255),
+                #     id_xml VARCHAR(10),
+                #     liczba_opakowan VARCHAR(50),
+                #     rodzaj_opakowania VARCHAR(50),
+                #     pojemnosc VARCHAR(50),
+                #     jednostka_pojemnosci VARCHAR(50),
+                #     informacje_dodatkowe VARCHAR(255)
+                # );
+                    opakowania = []
+                    for opakowanie in elem.findall('.//ns:opakowania/ns:opakowanie', NAMESPACE):
+                        jednostka_opakowania = opakowanie.find('.//ns:jednostkiOpakowania/ns:jednostkaOpakowania', NAMESPACE)
+
+                        opakowania.append({
+                            'id_produktu': id_produktu,
+                            'kod_gtin': opakowanie.get('kodGTIN'),
+                            'kategoria_dostepnosci': opakowanie.get('kategoriaDostepnosci'),
+                            'skasowane': opakowanie.get('skasowane'),
+                            'numerEU': opakowanie.get('numerEu'),
+
+                            'dystrybutor_rownolegly': opakowanie.get('dystrybutorRownolegly'),
+                            'id_xml': opakowanie.get('id'),
+
+                            'liczba_opakowan': jednostka_opakowania.get('liczbaOpakowan') if jednostka_opakowania is not None else None,
+                            'rodzaj_opakowania': jednostka_opakowania.get('rodzajOpakowania') if jednostka_opakowania is not None else None,
+                            'pojemnosc': jednostka_opakowania.get('pojemnosc') if jednostka_opakowania is not None else None,
+                            'jednostka_pojemnosci': jednostka_opakowania.get('jednostkaPojemnosci') if jednostka_opakowania is not None else None,
+                            'informacje_dodatkowe': jednostka_opakowania.get('informacjeDodatkowe') if jednostka_opakowania is not None else None
+                        })
+
+                    for opakowanie in opakowania:
+                        if False:
+                            cur.execute("""--sql
+                                        SELECT insert_opakowania(
+                                            %(id_produktu)s,
+                                            %(kod_gtin)s,
+                                            %(kategoria_dostepnosci)s,
+                                            %(skasowane)s,
+                                            %(numerEU)s,
+                                            %(dystrybutor_rownolegly)s,
+                                            %(id_xml)s,
+                                            %(liczba_opakowan)s,
+                                            %(rodzaj_opakowania)s,
+                                            %(pojemnosc)s,
+                                            %(jednostka_pojemnosci)s,
+                                            %(informacje_dodatkowe)s
+                                        );
+                                        """, opakowanie)
+                        else:
+                            print(opakowanie)
+
+
     return 0
 
 if __name__ == "__main__":
-    main()
+    cur, conn = get_psql_cursor()
+    main(cur, conn)
+    conn.close()
