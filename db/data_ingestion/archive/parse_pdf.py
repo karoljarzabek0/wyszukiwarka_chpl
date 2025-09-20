@@ -16,6 +16,7 @@ def pdf_to_text(url):
             for page in doc:
                 text += page.get_text()
                 text += '\n'
+                
         # Usuń znaczniki stron i ich szum
         #text = re.sub(r"\n\d+\s*\n", "[[NOWA_STRONA]]\n", text)
         text = re.sub(r"\n\d+\s*\n", "\n", text)

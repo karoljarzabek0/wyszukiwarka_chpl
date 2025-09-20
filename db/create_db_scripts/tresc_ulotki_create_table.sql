@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS tresc_ulotki
     FOREIGN KEY (id_produktu) REFERENCES leki(id_produktu) ON DELETE CASCADE,
     tresc_ulotki TEXT,
     fts_vector tsvector GENERATED ALWAYS AS (
-    to_tsvector('simple', coalesce(tresc_ulotki, ''))
+    to_tsvector('polishv2', coalesce(tresc_ulotki, ''))
     -- pl_ispell
     ) STORED
 );
