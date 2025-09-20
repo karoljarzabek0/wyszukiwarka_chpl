@@ -1,68 +1,106 @@
+import os
+import torch
 from transformers import AutoTokenizer
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-print("Imported transfromers")
+from dotenv import load_dotenv
+import psycopg2
 
-# model = SentenceTransformer(
-#     "sdadas/stella-pl" ,
-#     #"sdadas/mmlw-retrieval-roberta-large-v2",
-#     trust_remote_code=True,
-#     #device="cuda",
-#     model_kwargs={"attn_implementation": "flash_attention_2", "trust_remote_code": True}
-# )
-# #Flash-Attention works only in 16-bit mode, so we need to cast the model to float16 or bfloat16
-# model.bfloat16()
+def get_psql_cursor():
+    try:
+        conn = psycopg2.connect(
+            host=DB_HOST,
+            port=DB_PORT,
+            database=DB_NAME,
+            user=DB_USER,
+            password=DB_PASSWORD
+        )
+        print("Connected to the database successfully!")
+        return conn.cursor(), conn
+    except Exception as e:
+        print("Error while connecting to PostgreSQL:", e)
+        return None, None
+    
 
-model_name = 'Snowflake/snowflake-arctic-embed-l-v2.0'
-model = SentenceTransformer(model_name)
-tokenizer = AutoTokenizer.from_pretrained("Snowflake/snowflake-arctic-embed-l-v2.0", trust_remote_code=True)
+def insert_embedding(cur, conn, id_produktu, tresc, wektor):
+    typ_fragmentu = 'chpl'
+    try:
+        cur.execute(
+            """
+            SELECT insert_fragment (%s, %s, %s, %s::vector);
+            """,
+            (id_produktu, tresc, typ_fragmentu, wektor.tolist())
+        )
+        conn.commit()
+        #print(f"Inserted embedding for product ID {id_produktu}")
+    except Exception as e:
+        print("Error inserting embedding:", e)
+        conn.rollback()  
 
-print("Imported models")
-# text = """1
-# CHARAKTERYSTYKA PRODUKTU LECZNICZEGO
-# 1. NAZWA PRODUKTU LECZNICZEGO
-# Edelan, 1 mg/g, krem
-# 2. SKŁAD JAKOŚCIOWY I ILOŚCIOWY
-# Każdy g kremu zawiera 1 mg mometazonu furoinianu (Mometasoni furoas).
-# Pełny wykaz substancji pomocniczych, patrz punkt 6.1. 3. POSTAĆ FARMACEUTYCZNA
-# Krem
-# Biały lub prawie biały, gładki, jednolity krem."""
+def process_text(id_produktu, text):
+    chunks = text_splitter.create_documents([text])
+    # Shape: 1024
+    # chunks = chunk_text(text)
 
-with open("test.txt", "r") as f:
-    text = f.read()
+    print(f"Total chunks created: {len(chunks)}")
+    for chunk in chunks:
+        #print(chunk)
+        #print(f"Length of chunk in chars: {len(chunk.page_content)}")
+        token_ids = tokenizer.encode(chunk.page_content)
+        #print("Number of tokens:", len(token_ids))
+        embeddings = model.encode(chunk.page_content, convert_to_numpy=True)
+        #print("Embedding shape:", embeddings.shape)
+        insert_embedding(cur, conn, id_produktu, chunk.page_content, embeddings)
+        #print("------")
 
-def chunk_text(sample_text: str = "", chunk_size: int = 800, overlap: int = 100):
-    chunks = []
-    i = 100
-    while i < len(sample_text):
-        chunks.append(sample_text[i-100:i + chunk_size + overlap])
-        i += chunk_size
-        print(f"Chunk size: {i}")
-    return chunks
+
+load_dotenv()
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+
+print("Imported transformers")
 
 text_splitter = RecursiveCharacterTextSplitter(
     # Set a really small chunk size, just to show.
-    chunk_size=1000,
+    chunk_size=2000,
     chunk_overlap=200,
     length_function=len,
     is_separator_regex=True,
 )
-chunks = text_splitter.create_documents([text])
 
-# chunks = chunk_text(text)
-for chunk in chunks:
-    print(chunk)
-    print(f"Length of chunk in chars: {len(chunk.page_content)}")
-    print("------")
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Using device: {device}")
 
+model_name = 'sdadas/mmlw-retrieval-roberta-large'
+model = SentenceTransformer(model_name, device=device, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained("sdadas/mmlw-retrieval-roberta-large", trust_remote_code=True)
 
-# tokens = tokenizer.tokenize(text)
-# token_ids = tokenizer.encode(text)
+print("Imported models")
 
-# print("Tokens:", tokens)
-# print("Number of tokens:", len(token_ids))
+###########################################
+cur, conn = get_psql_cursor()
 
-# embeddings = model.encode(text, convert_to_numpy=True)
-# print("Embedding shape:", embeddings.shape)
-# print(embeddings)
+cur.execute("SELECT COUNT(*) FROM tresc_chpl WHERE LENGTH(tresc_chpl) > 5;")
+count = cur.fetchone()[0]
+print(f"Total records in tresc_chpl: {count}")
+
+for i in range(count):
+    print(f"Processing record {i+1}/{count}")
+    cur.execute("""
+    SELECT id_produktu, nazwa_produktu, tresc_chpl
+    FROM tresc_chpl
+    WHERE LENGTH(tresc_chpl) > 5
+    ORDER BY id_produktu
+    LIMIT 1
+    OFFSET %s;
+    """, (i,))
+
+    id_produktu, nazwa_produktu, tresc_chpl = cur.fetchone()
+
+    process_text(id_produktu, tresc_chpl)
+
+conn.close()
