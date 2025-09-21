@@ -113,7 +113,7 @@ def search_similar(cur, query_text, top_k=5):
 
     return cur.fetchall()
 
-results = search_similar(cur, "narcyzm", 50)
+results = search_similar(cur, "wysoki cholesterol", 50)
 df = pd.DataFrame(results, columns=['id_produktu', 'nazwa_produktu', 'kod_atc', 'nazwa_powszechna', 'fts_rank', 'vector_rank', 'combined_rank', 'substancje'])
 print(df)
 # for row in results:
