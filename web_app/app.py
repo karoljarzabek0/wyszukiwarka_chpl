@@ -5,6 +5,7 @@ import json
 import os
 from dotenv import load_dotenv
 import psycopg2
+import psycopg2.extras
 
 
 app = Flask(__name__)
@@ -22,6 +23,9 @@ print(f"Using device: {device}")
 
 model_name = 'sdadas/mmlw-retrieval-roberta-large'
 model = SentenceTransformer(model_name, device=device, trust_remote_code=True)
+
+with open('kody_atc.json', 'r') as f:
+    kody_atc = json.load(f)
 
 # Database connection function
 def get_db_connection():
