@@ -1,0 +1,166 @@
+{
+    "A": {
+        "name": "Przewód pokarmowy i metabolizm",
+        "subgroups": {
+            "A01": "Preparaty stomatologiczne",
+            "A02": "Leki stosowane w zaburzeniach wydzielania soku żołądkowego",
+            "A03": "Leki stosowane w czynnościowych zaburzeniach przewodu pokarmowego",
+            "A04": "Leki przeciwwymiotne i przeciw nudnościom",
+            "A05": "Leki stosowane w chorobach dróg żółciowych i wątroby",
+            "A06": "Leki przeczyszczające",
+            "A07": "Leki przeciwbiegunkowe, przeciwzapalne i przeciwdrobnoustrojowe stosowane w chorobach przewodu pokarmowego",
+            "A08": "Leki przeciw otyłości z wyłączeniem preparatów dietetycznych",
+            "A09": "Preparaty trawienne, w tym enzymy",
+            "A10": "Leki stosowane w cukrzycy",
+            "A11": "Witaminy",
+            "A12": "Preparaty mineralne",
+            "A13": "Leki wzmacniające",
+            "A14": "Anaboliczne preparaty ogólnoustrojowe",
+            "A15": "Leki pobudzające apetyt",
+            "A16": "Inne leki działające na przewód pokarmowy i metabolizm"
+        }
+    },
+    "B": {
+        "name": "Krew i układ krwiotwórczy",
+        "subgroups": {
+            "B01": "Leki przeciwzakrzepowe",
+            "B02": "Leki przeciwkrwotoczne",
+            "B03": "Leki stosowane w niedokrwistości",
+            "B05": "Preparaty krwiozastępcze i roztwory do wlewów",
+            "B06": "Inne leki hematologiczne"
+        }
+    },
+    "C": {
+        "name": "Układ sercowo-naczyniowy",
+        "subgroups": {
+            "C01": "Leki stosowane w chorobach serca",
+            "C02": "Leki stosowane w chorobie nadciśnieniowej",
+            "C03": "Leki moczopędne",
+            "C04": "Leki rozszerzające naczynia obwodowe",
+            "C05": "Leki ochraniające ścianę naczyń",
+            "C07": "Leki β-adrenolityczne (Beta-blokery ?)",
+            "C08": "Antagonisty kanału wapniowego",
+            "C09": "Leki działające na układ renina–angiotensyna",
+            "C10": "Leki zmniejszające stężenie lipidów"
+        }
+    },
+    "D": {
+        "name": "Preparaty dermatologiczne",
+        "subgroups": {
+            "D01": "Leki przeciwgrzybicze",
+            "D02": "Leki keratolityczne i działające ochronnie",
+            "D03": "Leki stosowane w leczeniu ran i owrzodzeń",
+            "D04": "Leki przeciwświądowe",
+            "D05": "Leki przeciwłuszczycowe",
+            "D06": "Antybiotyki i chemioterapeutyki",
+            "D07": "Kortykosteroidy",
+            "D08": "Antyseptyki i środki dezynfekujące",
+            "D09": "Opatrunki lecznicze",
+            "D10": "Leki przeciwtrądzikowe",
+            "D11": "Inne dermatologiczne"
+        }
+    },
+    "G": {
+        "name": "Układ moczowo-płciowy i hormony płciowe",
+        "subgroups": {
+            "G01": "Leki przeciwzakaźne i antyseptyczne ginekologiczne",
+            "G02": "Inne leki ginekologiczne",
+            "G03": "Hormony płciowe i modulatory układu płciowego",
+            "G04": "Leki urologiczne"
+        }
+    },
+    "H": {
+        "name": "Hormony (z wyłączeniem płciowych)",
+        "subgroups": {
+            "H01": "Hormony przysadki, podwzgórza i ich analogi",
+            "H02": "Kortykosteroidy do stosowania wewnętrznego",
+            "H03": "Preparaty tarczycowe",
+            "H04": "Hormony trzustki",
+            "H05": "Preparaty wapnia do regulacji gospodarki hormonalnej"
+        }
+    },
+    "J": {
+        "name": "Leki przeciwzakaźne (przeciwinfekcyjne)",
+        "subgroups": {
+            "J01": "Leki przeciwbakteryjne (antybiotyki)",
+            "J02": "Leki przeciwgrzybicze",
+            "J04": "Leki przeciwprątkowe",
+            "J05": "Leki przeciwwirusowe",
+            "J06": "Surowice i immunoglobuliny",
+            "J07": "Szczepionki"
+        }
+    },
+    "L": {
+        "name": "Leki przeciwnowotworowe i immunomodulujące",
+        "subgroups": {
+            "L01": "Cytostatyki",
+            "L02": "Leki hormonalne",
+            "L03": "Immunostymulanty",
+            "L04": "Immunosupresanty"
+        }
+    },
+    "M": {
+        "name": "Układ mięśniowo-szkieletowy",
+        "subgroups": {
+            "M01": "Leki przeciwzapalne i przeciwreumatyczne",
+            "M02": "Preparaty miejscowe przeciwzapalne i przeciwreumatyczne",
+            "M03": "Leki zwiotczające mięśnie",
+            "M04": "Leki przeciw dnie",
+            "M05": "Leki stosowane w chorobach układu kostnego",
+            "M09": "Inne leki stosowane w zaburzeniach układu mięśniowo-szkieletowego"
+        }
+    },
+    "N": {
+        "name": "Ośrodkowy układ nerwowy",
+        "subgroups": {
+            "N01": "Leki znieczulające",
+            "N02": "Leki przeciwbólowe",
+            "N03": "Leki przeciwpadaczkowe",
+            "N04": "Leki przeciw chorobie Parkinsona",
+            "N05": "Leki psycholeptyczne",
+            "N06": "Psychoanaleptyki",
+            "N07": "Inne leki wpływające na układ nerwowy"
+        }
+    },
+    "P": {
+        "name": "Leki przeciwpasożytnicze, owadobójcze i repelenty",
+        "subgroups": {
+            "P01": "Leki przeciwpierwotniakowe",
+            "P02": "Leki przeciwrobacze",
+            "P03": "Środki przeciw pasożytom zewnętrznym"
+        }
+    },
+    "R": {
+        "name": "Układ oddechowy",
+        "subgroups": {
+            "R01": "Leki stosowane w chorobach nosa",
+            "R02": "Leki stosowane w chorobach gardła",
+            "R03": "Leki stosowane w obturacyjnych chorobach dróg oddechowych",
+            "R05": "Leki stosowane w kaszlu i przeziębieniu",
+            "R06": "Leki przeciwhistaminowe do stosowania wewnętrznego",
+            "R07": "Inne preparaty stosowane w chorobach układu oddechowego"
+        }
+    },
+    "S": {
+        "name": "Narządy wzroku i słuchu",
+        "subgroups": {
+            "S01": "Leki oftalmologiczne (okulistyczne)",
+            "S02": "Leki otologiczne",
+            "S03": "Leki oftalmologiczne oraz otologiczne"
+        }
+    },
+    "V": {
+        "name": "Różne",
+        "subgroups": {
+            "V01": "Alergeny",
+            "V03": "Pozostałe produkty lecznicze",
+            "V04": "Środki diagnostyczne",
+            "V06": "Preparaty dietetyczne",
+            "V07": "Wszystkie inne preparaty nieterapeutuczne",
+            "V08": "Środki cieniuące (kontrastowe)",
+            "V09": "Radiofarmaceutyki diagnostyczne",
+            "V10": "Radiofarmaceutyki lecznicze",
+            "V20": "Inne"
+        }
+    }
+}
