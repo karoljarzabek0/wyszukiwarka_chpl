@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 import torch
 from sentence_transformers import SentenceTransformer
 import json
@@ -24,7 +24,7 @@ print(f"Using device: {device}")
 model_name = 'sdadas/mmlw-retrieval-roberta-large'
 model = SentenceTransformer(model_name, device=device, trust_remote_code=True)
 
-with open('kody_atc.json', 'r') as f:
+with open('kody_atc.json', 'r', encoding='utf-8') as f:
     kody_atc = json.load(f)
 
 # Database connection function
@@ -92,11 +92,24 @@ def get_users():
     rows = cur.fetchall()
     
     results = [dict(row) for row in rows]  # convert rows to dict
-    
+    for result in results:
+        kod_atc = result.get('kod_atc')
+        if kod_atc:
+            main_group = kod_atc[0]  # Get the first character for the main group
+            second_group = kod_atc[:3]  # Get the first three characters for the second group
+            result['nazwa_atc'] = kody_atc.get(main_group, {}).get('name', 'Unknown')
+            result['podgrupa_atc'] = kody_atc.get(main_group, {}).get('subgroups', {}).get(second_group, 'Brak')
+            print(second_group)
+        else:
+            result['nazwa_atc'] = 'Brak'
+
     cur.close()
     conn.close()
     
-    return jsonify(results)
+    return Response(
+    json.dumps(results, ensure_ascii=False),
+    content_type='application/json; charset=utf-8'
+)
 
 # API endpoint: Get single user by id
 @app.route('/api/leki/<int:id_produktu>', methods=['GET'])
@@ -117,4 +130,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True, port=5001)
