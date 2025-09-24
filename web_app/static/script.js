@@ -1,10 +1,18 @@
-//https://karoljarzabek.pl/api/search?q=null
-
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get("q");       // "test"
 var results = document.getElementById("results");
 results.innerText = query;
 console.log(query);
+
+function slugify(productName) {
+  return productName
+    .toLowerCase()
+    .replace(/[-,\\%+ ]+/g, '_')       // dash first
+    .replace(/_+/g, '_')               // collapse multiple underscores
+    .replace(/^_+|_+$/g, '');          // trim leading/trailing underscores
+}
+
+currentDomain = 'http://127.0.0.1:5001';
 
 // Function to fetch search results from API
 async function performSearch(query) {
@@ -12,14 +20,22 @@ async function performSearch(query) {
     resultsContainer.innerHTML = "<li>Loading...</li>";
 
     try {
-        const response = await fetch(`https://karoljarzabek.pl/api/search?q=${encodeURIComponent(query)}`);
+        const response = await fetch(`${currentDomain}/api/search?q=${encodeURIComponent(query)}`);
         const data = await response.json();
 
         resultsContainer.innerHTML = '';
-        if (data.results && data.results.length > 0) {
-            data.results.forEach(item => {
+        if (data && data.length > 0) {
+            data.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = item;
+                li.innerHTML = `<a href="/leki/${slugify(item.nazwa_produktu)}" target="_blank">
+                    <h2>${item.nazwa_produktu} (test)</h2>
+                    Kod ATC: ${item.kod_atc}<br>
+                    Nazwa powszechna: ${item.nazwa_powszechna} (${item.moc})<br>
+                    Grupa ATC: ${item.grupa_atc}<br>
+                    Vector rank: ${item.vector_rank}, FTS rank: ${item.fts_rank}<br>
+                    Headline: ${item.ts_headline}
+                </a>
+                `;
                 resultsContainer.appendChild(li);
             });
         } else {

@@ -17,10 +17,10 @@ def search():
 
     q = request.args.get("q")
     query_embedding = model.encode("zapytanie: " + q, convert_to_numpy=True)
-    
+    q = " OR ".join(q.split())  # Simple tokenization by spaces
     conn = get_db_connection()
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-
+    
     cur.execute(
         hybrid_search_query,
         (q, query_embedding.tolist(), query_embedding.tolist())
