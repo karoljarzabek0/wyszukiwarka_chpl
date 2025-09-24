@@ -79,7 +79,7 @@ fts_filter AS (
     CROSS JOIN query_cte q
     WHERE t.fts_vector @@ q.query_text AND ts_rank(t.fts_vector, q.query_text, 32) >= 0.05
 )
-SELECT l.nazwa_produktu, l.kod_atc, ROUND(f.vector_rank::numeric, 4)::float, ROUND(f.fts_rank::numeric, 4)::float
+SELECT f.id_produktu, l.nazwa_produktu, l.kod_atc, ROUND(f.vector_rank::numeric, 4)::float, ROUND(f.fts_rank::numeric, 4)::float
 ,ts_headline('polishv2', fr.tresc_fragmentu, q.query_text,'MaxFragments=2, MaxWords=10, MinWords=5, StartSel=<<, StopSel=>>')--, fr.tresc_fragmentu
 FROM fts_filter f
 CROSS JOIN query_cte q
@@ -94,7 +94,7 @@ LIMIT 30;
 
     return cur.fetchall()
 
-results = search_similar(cur, "działania OR nieporządane OR paracetamol", 50)
+results = search_similar(cur, "cukrzyca", 50)
 # df = pd.DataFrame(results, columns=['id_produktu', 'nazwa_produktu', 'kod_atc', 'nazwa_powszechna', 'fts_rank', 'vector_rank', 'combined_rank', 'substancje'])
 # print(df)
 print("nazwa_produktu, kod_atc, vector_rank, fts_rank, snippet")
