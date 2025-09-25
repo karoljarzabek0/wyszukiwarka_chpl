@@ -17,14 +17,15 @@ def produkt(slug):
     print(f"Loading SQL from: {sql_path}")
     with open(sql_path, 'r', encoding='utf-8') as f:
         lek_query = f.read()
-    query = r"{}".format(lek_query)
-    cur.execute(query, (slug,))
-    produkt_data = cur.fetchall()
-    
-    # Get column names for rendering dynamically
-    column_names = [desc[0] for desc in cur.description]
-    
+    cur.execute(lek_query, (slug,))
+    bases = cur.fetchall()
+
+    base = { 
+
+    }
+    refundacja = {}
+
     cur.close()
     conn.close()
     
-    return render_template('lek.html', produkt_data=produkt_data, column_names=column_names)
+    return render_template('lek.html', base=base, refundacja=refundacja)
