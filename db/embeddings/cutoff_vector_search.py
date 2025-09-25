@@ -80,21 +80,23 @@ fts_filter AS (
     WHERE t.fts_vector @@ q.query_text AND ts_rank(t.fts_vector, q.query_text, 32) >= 0.05
 )
 SELECT l.nazwa_produktu, l.kod_atc, ROUND(f.vector_rank::numeric, 4)::float, ROUND(f.fts_rank::numeric, 4)::float
-,ts_headline('polishv2', fr.tresc_fragmentu, q.query_text,'MaxFragments=2, MaxWords=10, MinWords=5, StartSel=<<, StopSel=>>')--, fr.tresc_fragmentu
+,ts_headline('polishv2', fr.tresc_fragmentu, q.query_text,'MaxFragments=1, MaxWords=25, MinWords=15, StartSel=<<, StopSel=>>')--, fr.tresc_fragmentu
 FROM fts_filter f
 CROSS JOIN query_cte q
 LEFT JOIN leki l ON f.id_produktu = l.id_produktu
 LEFT JOIN tresc_chpl t ON f.id_produktu = t.id_produktu
 LEFT JOIN fragmenty fr ON f.id_fragmentu = fr.id_fragmentu
 ORDER BY f.vector_rank ASC
-LIMIT 30;
+LIMIT 20;
+;
         """,
         (query_text, query_embedding.tolist(), query_embedding.tolist())
     )
 
     return cur.fetchall()
-
-results = search_similar(cur, "działania OR nieporządane OR paracetamol", 50)
+query = "hiv powikłania"
+or_query = " OR ".join(query.split())
+results = search_similar(cur, or_query, 50)
 # df = pd.DataFrame(results, columns=['id_produktu', 'nazwa_produktu', 'kod_atc', 'nazwa_powszechna', 'fts_rank', 'vector_rank', 'combined_rank', 'substancje'])
 # print(df)
 print("nazwa_produktu, kod_atc, vector_rank, fts_rank, snippet")
