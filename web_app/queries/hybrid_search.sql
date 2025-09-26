@@ -44,4 +44,4 @@ LEFT JOIN leki l ON f.id_produktu = l.id_produktu
 LEFT JOIN fragmenty fr ON f.id_fragmentu = fr.id_fragmentu
 LEFT JOIN grupy_atc g ON LEFT(l.kod_atc, 1) = g.code
 ORDER BY f.vector_rank ASC
-LIMIT 30;
+LIMIT 50;

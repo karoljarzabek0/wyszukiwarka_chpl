@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Wyszukiwarka ChPL</h1>
-<input type="text" placeholder="Szukaj" id="searchBox">
-<button onClick=updateURLAndSearch()>Szukaj</button>
-<div class="results" id="results"></div>
+<div class="main">
+    <h1>Wyszukiwarka ChPL</h1>
+    <div>
+    <input type="text" placeholder="Szukaj" id="searchBox">
+    </div>
+    <button onClick=updateURLAndSearch() id="searchButton">Szukaj</button>
+    <div class="results" id="results"></div>
+</div>
 {% endblock  %}

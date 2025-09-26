@@ -17,7 +17,7 @@ currentDomain = 'http://127.0.0.1:5001';
 // Function to fetch search results from API
 async function performSearch(query) {
     const resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = "<li>Loading...</li>";
+    resultsContainer.innerHTML = "<div class='loader'></div>";
 
     try {
         const response = await fetch(`${currentDomain}/api/search?q=${encodeURIComponent(query)}`);
@@ -26,14 +26,14 @@ async function performSearch(query) {
         resultsContainer.innerHTML = '';
         if (data && data.length > 0) {
             data.forEach(item => {
-                const li = document.createElement('li');
+                const li = document.createElement('div');
                 li.innerHTML = `<a href="/leki/${slugify(item.nazwa_produktu)}" target="_blank">
-                    <h2>${item.nazwa_produktu} (test)</h2>
-                    Kod ATC: ${item.kod_atc}<br>
-                    Nazwa powszechna: ${item.nazwa_powszechna} (${item.moc})<br>
-                    Grupa ATC: ${item.grupa_atc}<br>
-                    Vector rank: ${item.vector_rank}, FTS rank: ${item.fts_rank}<br>
-                    Headline: ${item.ts_headline}
+                    <h2>${item.nazwa_produktu}</h2>
+                    <p>Kod ATC: ${item.kod_atc}</p>
+                    <p>Nazwa powszechna: ${item.nazwa_powszechna} (${item.moc})</p>
+                    <p>Grupa ATC: ${item.grupa_atc}</p>
+                    <p>Vector rank: ${item.vector_rank}, FTS rank: ${item.fts_rank}</p>
+                    <p class="headline">Headline: ${item.ts_headline}</p>
                 </a>
                 `;
                 resultsContainer.appendChild(li);
