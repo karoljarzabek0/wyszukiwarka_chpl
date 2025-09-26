@@ -17,7 +17,7 @@ currentDomain = 'http://127.0.0.1:5001';
 // Function to fetch search results from API
 async function performSearch(query) {
     const resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = "<div class='loader'></div>";
+    resultsContainer.innerHTML = "<div class='container'><div class='loader'></div></div>";
 
     try {
         const response = await fetch(`${currentDomain}/api/search?q=${encodeURIComponent(query)}`);
@@ -27,14 +27,15 @@ async function performSearch(query) {
         if (data && data.length > 0) {
             data.forEach(item => {
                 const li = document.createElement('div');
-                li.innerHTML = `<a href="/leki/${slugify(item.nazwa_produktu)}" target="_blank">
+                li.innerHTML = `
+                <a href="/leki/${slugify(item.nazwa_produktu)}" target="_blank">
                     <h2>${item.nazwa_produktu}</h2>
-                    <p>Kod ATC: ${item.kod_atc}</p>
-                    <p>Nazwa powszechna: ${item.nazwa_powszechna} (${item.moc})</p>
-                    <p>Grupa ATC: ${item.grupa_atc}</p>
-                    <p>Vector rank: ${item.vector_rank}, FTS rank: ${item.fts_rank}</p>
-                    <p class="headline">Headline: ${item.ts_headline}</p>
                 </a>
+                    <p>Kod ATC: ${item.kod_atc}</p>
+                    <p>${item.nazwa_powszechna} (${item.moc})</p>
+                    <p>Grupa: ${item.grupa_atc}</p>
+                    <p class="headline">${item.ts_headline}</p>
+                
                 `;
                 resultsContainer.appendChild(li);
             });

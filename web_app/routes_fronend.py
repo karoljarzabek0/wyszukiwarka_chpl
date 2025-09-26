@@ -61,7 +61,7 @@ def produkt(slug):
             "zakres_objety_refundacja": row[7]
         })
 
-    atc_letter = bases['kod_atc'][0:1]
+    atc_letter = base['kod_atc'][0:1]
     icons = {'A': 'stomach.svg',
              'B': 'blood.svg',
              'C': 'heart.svg',

@@ -16,9 +16,17 @@ body {
 
 h1, h2, h3 {
     color: #2A7F83;
+    text-align: center;
 }
 
-
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
 
 .main {
     flex: 1;
@@ -27,9 +35,23 @@ h1, h2, h3 {
     margin: 0 auto;
 }
 
+.results {
+    width: 250px;
+}
+
 .headline {
+    padding: 1rem;
     font-style: italic;
-    color: #D9534F;
+    background-color: #adadad;
+    border-radius: 1rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 #searchBox {
@@ -46,8 +68,9 @@ h1, h2, h3 {
 }
 
 #searchButton {
+    width: 250px;
   padding: 10px 16px;
-  margin-left: 8px;
+  margin-top: 8px;
   border: none;
   border-radius: 0.5rem;
   font-size: 15px;
@@ -64,15 +87,17 @@ h1, h2, h3 {
 
 
 /* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
 .loader {
   width: 15px;
   aspect-ratio: 1;
   border-radius: 50%;
   animation: l5 1s infinite linear alternate;
 }
+
 @keyframes l5 {
-    0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
-    33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
-    66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
-    100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+  0%   { box-shadow: 20px 0 #2A7F83, -20px 0 #2A7F8320; background: #2A7F83; }
+  33%  { box-shadow: 20px 0 #2A7F83, -20px 0 #2A7F8320; background: #2A7F8320; }
+  66%  { box-shadow: 20px 0 #2A7F8320, -20px 0 #2A7F83; background: #2A7F8320; }
+  100% { box-shadow: 20px 0 #2A7F8320, -20px 0 #2A7F83; background: #2A7F83; }
 }

@@ -10,7 +10,8 @@ SELECT l.id_produktu,
 	   l.nazwa_wytwórcy_importera,
 	   l.kraj_wytwórcy_importera,
 	   a.name,
-	   atc.name
+	   atc.name,
+	   l.kod_atc
 FROM leki l
 LEFT JOIN grupy_atc a ON a.code = LEFT(l.kod_atc, 1)
 LEFT JOIN grupy_atc atc ON atc.code = LEFT(l.kod_atc, 3)

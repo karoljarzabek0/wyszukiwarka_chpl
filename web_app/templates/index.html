@@ -2,11 +2,13 @@
 
 {% block content %}
 <div class="main">
-    <h1>Wyszukiwarka ChPL</h1>
-    <div>
-    <input type="text" placeholder="Szukaj" id="searchBox">
-    </div>
+    <h1>Wyszukiwarka</h1>
+    <h1>ChPL</h1>
+    <div class="input">
+
+    <input type="text" placeholder="Szukaj" id="searchBox" />
     <button onClick=updateURLAndSearch() id="searchButton">Szukaj</button>
+    </div>
     <div class="results" id="results"></div>
 </div>
 {% endblock  %}
