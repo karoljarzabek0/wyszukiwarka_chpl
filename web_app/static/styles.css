@@ -227,3 +227,25 @@ p::-webkit-scrollbar-thumb:hover {
 
 
 /* Strona pojedyńczego leku */
+.single-medicine-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--offwhite);
+}
+
+.chpl-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: var(--primary);
+  color: var(--offwhite);
+  border-radius: 0.5rem;
+  font-weight: bold;
+}

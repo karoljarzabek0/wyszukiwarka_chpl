@@ -73,10 +73,10 @@ async function performSearch(query) {
                 resultsContainer.appendChild(li);
             });
         } else {
-            resultsContainer.innerHTML = "<li>No results found.</li>";
+            resultsContainer.innerHTML = "<p>No results found.</p>";
         }
     } catch (error) {
-        resultsContainer.innerHTML = "<li>Error fetching data.</li>";
+        resultsContainer.innerHTML = "<p>Error fetching data.</p>";
         console.error(error);
     }
     }

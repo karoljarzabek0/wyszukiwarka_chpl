@@ -1,30 +1,31 @@
+    {% extends "base.html" %}
+
+    {% block content %}
+    <div class="single-medicine-main">
     {% if base %}
         <h1>{{ base.nazwa_produktu }}</h1>
-        <img src="{{ url_for('static', filename='svg/' ~ svg) }}" alt="ATC category icon" width="100">
+        <!-- <img src="{{ url_for('static', filename='svg/' ~ svg) }}" alt="ATC category icon" width="100"> -->
+        <p> {{ base.nazwa_powszechna }} ({{ base.moc }})</p>
+        <p>Kod ATC: {{ base.kod_atc }}</p>
+        <p>Grupa: {{ base.name }}</p>
+        <p>Podgrupa: {{ base.atc_name }}</p>
+        <p>Forma: {{ base.nazwa_postaci_farmaceutycznej }}</p>
+        <p>Droga podania: {{ base.droga_podania }}</p>
+        <a href="{{ base.charakterystyka }}" class="chpl-button">Więcej informacji</a>
+        <p>Podmiot odpowiedzialny: {{ base.podmiot_odpowiedzialny }}</p>
+        <p>Nazwa wytwórcy importera: {{ base.nazwa_wytwórcy_importera }} ({{ base.kraj_wytwórcy_importera }})</p>
 
-        <h2>Basic Information</h2>
-        <ul>
-            <li><strong>Common Name:</strong> {{ base.nazwa_powszechna }}</li>
-            <li><strong>Strength:</strong> {{ base.moc }}</li>
-            <li><strong>Form:</strong> {{ base.nazwa_postaci_farmaceutycznej }}</li>
-            <li><strong>Administration Route:</strong> {{ base.droga_podania }}</li>
-            <li><strong>Characteristics:</strong> {{ base.charakterystyka }}</li>
-            <li><strong>Responsible Entity:</strong> {{ base.podmiot_odpowiedzialny }}</li>
-            <li><strong>Manufacturer:</strong> {{ base.nazwa_wytwórcy_importera }} ({{ base.kraj_wytwórcy_importera }})</li>
-            <li><strong>ATC Code:</strong> {{ base.kod_atc }} – {{ base.atc_name }}</li>
-        </ul>
-
-        <h2>Refundation Info</h2>
+        <h2>Dostępne opakowania + refundacje</h2>
         {% if refundacja %}
             <table border="1" cellpadding="5">
                 <thead>
                     <tr>
-                        <th>Strength</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Co-payment Level</th>
-                        <th>Patient Payment</th>
-                        <th>Scope</th>
+                        <th>Moc</th>
+                        <th>Ilość</th>
+                        <th>Cena</th>
+                        <th>Poziom odpłatności</th>
+                        <th>Wysokość dopłaty</th>
+                        <th>Zakres</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,9 +33,9 @@
                     <tr>
                         <td>{{ r.moc }}</td>
                         <td>{{ r.ilosc }}</td>
-                        <td>{{ r.cena_detaliczna }}</td>
+                        <td>{{ r.cena_detaliczna }}zł</td>
                         <td>{{ r.poziom_odplatnosci }}</td>
-                        <td>{{ r.wysokosc_doplaty }}</td>
+                        <td>{{ r.wysokosc_doplaty }}zł</td>
                         <td>{{ r.zakres_objety_refundacja }}</td>
                     </tr>
                 {% endfor %}
@@ -49,3 +50,5 @@
     {% endif %}
 
     <p><a href="{{ url_for('frontend.index') }}">Back to home</a></p>
+</div>
+{% endblock %}

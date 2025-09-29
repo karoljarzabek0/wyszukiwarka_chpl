@@ -84,4 +84,4 @@ def produkt(slug):
     cur.close()
     conn.close()
     
-    return render_template('lek.html', base=base, refundacja=refundacja, svg=svg)
+    return render_template('lek.html', title=base['nazwa_produktu'], base=base, refundacja=refundacja, svg=svg)
