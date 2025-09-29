@@ -6,14 +6,54 @@
         <h1>{{ base.nazwa_produktu }}</h1>
         <!-- <img src="{{ url_for('static', filename='svg/' ~ svg) }}" alt="ATC category icon" width="100"> -->
         <p> {{ base.nazwa_powszechna }} ({{ base.moc }})</p>
-        <p>Kod ATC: {{ base.kod_atc }}</p>
-        <p>Grupa: {{ base.name }}</p>
-        <p>Podgrupa: {{ base.atc_name }}</p>
-        <p>Forma: {{ base.nazwa_postaci_farmaceutycznej }}</p>
-        <p>Droga podania: {{ base.droga_podania }}</p>
-        <a href="{{ base.charakterystyka }}" class="chpl-button">Więcej informacji</a>
-        <p>Podmiot odpowiedzialny: {{ base.podmiot_odpowiedzialny }}</p>
-        <p>Nazwa wytwórcy importera: {{ base.nazwa_wytwórcy_importera }} ({{ base.kraj_wytwórcy_importera }})</p>
+        <p class="atc-code">Kod ATC: {{ base.kod_atc }}</p>
+        <div class="info-table">
+        <!-- Group 1 -->
+        <div class="info-group">
+            <h3>Klasyfikacja</h3>
+            <table>
+            <tr>
+                <td>Grupa:</td>
+                <td>{{ base.name }}</td>
+            </tr>
+            <tr>
+                <td>Podgrupa:</td>
+                <td>{{ base.atc_name }}</td>
+            </tr>
+            </table>
+        </div>
+
+        <!-- Group 2 -->
+        <div class="info-group">
+            <h3>Postać i podanie</h3>
+            <table>
+            <tr>
+                <td>Forma:</td>
+                <td>{{ base.nazwa_postaci_farmaceutycznej }}</td>
+            </tr>
+            <tr>
+                <td>Droga podania:</td>
+                <td>{{ base.droga_podania }}</td>
+            </tr>
+            </table>
+        </div>
+
+        <!-- Group 3 -->
+        <div class="info-group">
+            <h3>Producent</h3>
+            <table>
+            <tr>
+                <td>Podmiot odpowiedzialny:</td>
+                <td>{{ base.podmiot_odpowiedzialny }}</td>
+            </tr>
+            <tr>
+                <td>Wytwórca/importer:</td>
+                <td>{{ base.nazwa_wytwórcy_importera }} ({{ base.kraj_wytwórcy_importera }})</td>
+            </tr>
+            </table>
+        </div>
+
+        <a href="{{ base.charakterystyka }}" class="chpl-button">Więcej informacji 🔗</a>
 
         <h2>Dostępne opakowania + refundacje</h2>
         {% if refundacja %}
@@ -33,7 +73,11 @@
                     <tr>
                         <td>{{ r.moc }}</td>
                         <td>{{ r.ilosc }}</td>
-                        <td>{{ r.cena_detaliczna }}zł</td>
+                        {% if r.cena_detaliczna == 'Brak danych' %}
+                            <td>{{ r.cena_detaliczna }}</td>
+                        {% else %}
+                            <td>{{ r.cena_detaliczna }}zł</td>
+                        {% endif %}
                         <td>{{ r.poziom_odplatnosci }}</td>
                         <td>{{ r.wysokosc_doplaty }}zł</td>
                         <td>{{ r.zakres_objety_refundacja }}</td>
@@ -49,6 +93,6 @@
         <p>Please check the URL slug.</p>
     {% endif %}
 
-    <p><a href="{{ url_for('frontend.index') }}">Back to home</a></p>
+    <p><a href="{{ url_for('frontend.index') }}">Powrót na stronę główną</a></p>
 </div>
 {% endblock %}

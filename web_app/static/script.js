@@ -1,8 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get("q");       // "test"
 var results = document.getElementById("results");
-results.innerText = query;
-console.log(query);
 
 function slugify(productName) {
   return productName
@@ -19,6 +17,7 @@ function getAtcIcon(kod_atc) {
     B: "blood.svg",
     C: "heart.svg",
     D: "skin.svg",
+    G: "gender.svg",
     H: "hormones.svg",
     J: "virus.svg",
     L: "cancer.svg",
@@ -87,6 +86,7 @@ const query = document.getElementById('searchBox').value;
 if (!query) return;
 const newURL = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
 window.history.pushState({path: newURL}, '', newURL);
+document.title = `Wyniki dla: "${query}"`
 performSearch(query);
 }
 

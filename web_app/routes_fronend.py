@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from db_helper import get_db_connection
 import os
 import json
@@ -7,7 +7,11 @@ frontend_bp = Blueprint("frontend", __name__)
 
 @frontend_bp.route("/")
 def index():
-    return render_template("index.html")
+    # Get the `q` query param (returns None if not provided)
+    q = request.args.get("q", "RPL wyszukiwarka")
+
+    # Pass it to the template
+    return render_template("index.html", title=f"RPL | Wyniki dla: \"{q}\"")
 
 @frontend_bp.route('/leki/<slug>')
 def produkt(slug):
@@ -36,10 +40,11 @@ def produkt(slug):
             "kraj_wytwórcy_importera": bases[10],
             "name": bases[11],
             "atc_name": bases[12],
-            "kod_atc": bases[13]
+            "kod_atc": bases[13] if bases[13] else 'V010101'
         }
     else:
         base = {}
+        return render_template('lek.html', title='Błąd')
 
     sql_path = os.path.join(os.path.dirname(__file__), 'queries', 'refundacja.sql')
     print(f"Loading SQL from: {sql_path}")
@@ -60,8 +65,10 @@ def produkt(slug):
             "wysokosc_doplaty": row[6],
             "zakres_objety_refundacja": row[7]
         })
-
-    atc_letter = base['kod_atc'][0:1]
+        try:
+            atc_letter = base['kod_atc'][0:1]
+        except Exception as e:
+            atc_letter = 'V'
     icons = {'A': 'stomach.svg',
              'B': 'blood.svg',
              'C': 'heart.svg',
@@ -83,5 +90,7 @@ def produkt(slug):
 
     cur.close()
     conn.close()
+
+    nazwa = base['nazwa_produktu'] if base['nazwa_produktu'] else 'Błąd'
     
-    return render_template('lek.html', title=base['nazwa_produktu'], base=base, refundacja=refundacja, svg=svg)
+    return render_template('lek.html', title="RPL | " + nazwa, base=base, refundacja=refundacja, svg=svg)
