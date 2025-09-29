@@ -43,5 +43,6 @@ CROSS JOIN query_cte q
 LEFT JOIN leki l ON f.id_produktu = l.id_produktu
 LEFT JOIN fragmenty fr ON f.id_fragmentu = fr.id_fragmentu
 LEFT JOIN grupy_atc g ON LEFT(l.kod_atc, 1) = g.code
+WHERE l.rodzaj_preparatu = '%ludzki%'
 ORDER BY f.vector_rank ASC
 LIMIT 50;
