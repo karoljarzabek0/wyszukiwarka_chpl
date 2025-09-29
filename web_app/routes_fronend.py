@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from db_helper import get_db_connection
+from .db_helper import get_db_connection
 import os
 import json
 

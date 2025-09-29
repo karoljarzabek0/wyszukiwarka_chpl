@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify, Response
 import json
 import psycopg2.extras
-from db_helper import get_db_connection
-from roberta import model
+from .db_helper import get_db_connection
+from .roberta import model
 import os
 
 

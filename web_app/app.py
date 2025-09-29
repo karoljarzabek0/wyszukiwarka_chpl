@@ -4,7 +4,7 @@ import torch
 from sentence_transformers import SentenceTransformer
 import json
 import os
-from roberta import model
+from .roberta import model
 
 # Initialize app
 app = Flask(__name__)
@@ -13,8 +13,8 @@ app = Flask(__name__)
 load_dotenv()
 
 # Import routes AFTER app, model, and kody_atc are defined
-from routes_api import api_bp
-from routes_fronend import frontend_bp
+from .routes_api import api_bp
+from .routes_fronend import frontend_bp
 
 # Register Blueprints
 app.register_blueprint(api_bp, url_prefix="/api")
