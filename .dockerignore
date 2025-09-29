@@ -1,0 +1,27 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+.venv/
+.env
+Dockerfile
+docker-compose.yml
+docker-compose.yaml
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+dist/
+build/
+*.egg-info/
+node_modules/
+*.log
+logs/
+db/
