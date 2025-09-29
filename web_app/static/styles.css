@@ -1,3 +1,11 @@
+:root {
+    --primary: #2A7F83;
+    --offwhite: #eaeaea;
+    --text-gray: #757575;
+    --font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    --font-size-base: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +21,23 @@ body {
     min-height: 100vh;
     width: 100%;
     font-size: 0.8rem; /* ~14px if base is 16px */
+    background-color: var(--offwhite);
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+h2 {
+  font-size: 1.1rem;
 }
 
 h1, h2, h3 {
     color: #2A7F83;
     text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .container {
@@ -31,38 +51,112 @@ h1, h2, h3 {
 
 .main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 2rem;
     max-width: 400px;
     margin: 0 auto;
 }
 
+.main p {
+  color: var(--primary);
+  text-align: center;
+}
+
 .results {
-    width: 250px;
+    width: 100%;
+}
+
+.ind-med {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.ind-med-left h2 {
+  text-align: left;
+  display: -webkit-box;          /* needed for multi-line clamp */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3rem;           /* adjust to match your design */
+  max-height: 2.8rem;            /* 1 line = 1.1rem, 2 lines = 2.2rem */
+  -webkit-line-clamp: 2;         /* max 2 lines */
+  
+  /* fallback for single-line cases */
+  text-overflow: ellipsis;
+  white-space: normal;           /* allow wrapping if needed */
+  max-width: 100%;
+}
+.ind-med-left p {
+  text-align: left;
+  display: -webkit-box;          /* needed for multi-line clamp */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;         /* max 2 lines */
+  /* fallback for single-line cases */
+  text-overflow: ellipsis;
+  white-space: normal;           /* allow wrapping if needed */
+  max-width: 100%;
+}
+
+.ind-med-left p {
+  text-align: left;
+  font-size: 0.7rem;
+  color: var(--text-gray);
+}
+
+.ind-med-right {
+  padding-right: 1rem;
+}
+.atc-group {
+  font-size: 0.8rem;
+  /* letter-spacing: 0.05rem; */
+
+  background-color: var(--primary);
+  font-weight: bold;
+  text-align: left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+p.atc-group{
+    color: var(--offwhite);
 }
 
 p.headline {
+  color: var(--text-gray);
   height: 100px;
   overflow-y: scroll;
   text-align: justify;
   scrollbar-width: thin;           /* "auto" | "thin" | "none" */
-  scrollbar-color: #2A7F83 #c9c9c9;
+  scrollbar-color: #2A7F83 var(--offwhite);
   /* border-radius: 1rem;  */
 }
 
 
 .headline {
-  margin-top: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-style: italic;
-    background-color: #c9c9c9;
-    /* border-bottom-left-radius: 0.5rem;
-    border-top-left-radius: 0.5rem; */
-    border-bottom-right-radius: 0rem;
-    border-top-right-radius: 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  /* padding-left: 1rem; */
+  padding-right: 1rem;
+  font-style: italic;
+  background-color: var(--offwhite);
+  /* border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem; */
+  border-bottom-right-radius: 0rem;
+  border-top-right-radius: 0rem;
 }
+
+
 
 p::-webkit-scrollbar-track {
   color: #2A7F83;
@@ -83,7 +177,8 @@ p::-webkit-scrollbar-thumb:hover {
 }
 
 #searchBox {
-  width: 250px;
+  color: var(--primary);
+  width: 100%;
   padding: 10px 16px;
   border: none;
   border-radius: 0.5rem;
@@ -91,12 +186,12 @@ p::-webkit-scrollbar-thumb:hover {
   background: #f1f3f5;
   outline: none;
   transition: 0.2s;
-  padding-top: 2remrem;
+  margin-top: 1rem;
 
 }
 
 #searchButton {
-    width: 250px;
+  width: 100%;
   padding: 10px 16px;
   margin-top: 8px;
   border: none;
@@ -129,3 +224,6 @@ p::-webkit-scrollbar-thumb:hover {
   66%  { box-shadow: 20px 0 #2A7F8320, -20px 0 #2A7F83; background: #2A7F8320; }
   100% { box-shadow: 20px 0 #2A7F8320, -20px 0 #2A7F83; background: #2A7F83; }
 }
+
+
+/* Strona pojedyńczego leku */
