@@ -13,8 +13,11 @@ app = Flask(__name__)
 CORS(app, resources={
     r"/api/*": {
         "origins": [
-            "http://192.168.0.113:5001",   # local dev
-            "http://127.0.0.1:5001",       # local dev
+            "http://192.168.0.113:5001",   
+            "http://127.0.0.1:5001",
+            "http://127.0.0.1:8000",
+            "http://192.168.0.113:8000",
+            "http://192.168.0.97:8000",
             "https://leki.karoljarzabek.pl"     # production
         ]
     }

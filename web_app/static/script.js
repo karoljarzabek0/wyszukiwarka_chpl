@@ -37,7 +37,8 @@ function getAtcIcon(kod_atc) {
   return icons[atcLetter] || "other.svg";
 }
 
-currentDomain = 'http://127.0.0.1:5001';
+//let currentDomain = `${window.location.protocol}//${window.location.hostname}`;
+let currentDomain = `https://leki.karoljarzabek.pl`;
 
 // Function to fetch search results from API
 async function performSearch(query) {

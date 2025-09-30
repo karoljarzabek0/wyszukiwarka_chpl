@@ -12,7 +12,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install flask flask-cors python-dotenv sentence-transformers psycopg2-binary gunicorn
+#RUN pip install --no-cache-dir -r requirements.txt
 
 
 # Copy your application code
@@ -22,4 +23,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the app with Gunicorn
-CMD ["gunicorn", "web_app.app:app", "-w", "4", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "web_app.app:app", "-w", "1", "-b", "0.0.0.0:8000"]

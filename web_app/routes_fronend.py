@@ -8,10 +8,13 @@ frontend_bp = Blueprint("frontend", __name__)
 @frontend_bp.route("/")
 def index():
     # Get the `q` query param (returns None if not provided)
-    q = request.args.get("q", "RPL wyszukiwarka")
-
+    q = request.args.get("q", None)
+    if q:
+        title = f"RPL | Wyniki dla: \"{q}\""
+    else:
+        title = "RPL | Wyszukiwarka"
     # Pass it to the template
-    return render_template("index.html", title=f"RPL | Wyniki dla: \"{q}\"")
+    return render_template("index.html", title=title)
 
 @frontend_bp.route('/leki/<slug>')
 def produkt(slug):
