@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from .db_helper import get_db_connection
+from .db_helper import get_db_connection, log_query
 import os
 import json
 
@@ -88,9 +88,10 @@ def produkt(slug):
     except Exception as e:
         svg = 'other.svg'
 
+    nazwa = base['nazwa_produktu'] if base['nazwa_produktu'] else 'ERROR'
     cur.close()
+    log_query(conn=conn, is_index=False, query_name=nazwa, slug=slug)
     conn.close()
 
-    nazwa = base['nazwa_produktu'] if base['nazwa_produktu'] else 'Błąd'
     
     return render_template('lek.html', title="RPL | " + nazwa, base=base, refundacja=refundacja, svg=svg)

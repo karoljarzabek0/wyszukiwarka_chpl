@@ -38,6 +38,7 @@ SELECT f.id_produktu,
     ROUND(f.vector_rank::numeric, 4)::float AS vector_rank, 
     ROUND(f.fts_rank::numeric, 4)::float AS fts_rank,
     ts_headline('polishv2', fr.tresc_fragmentu, q.query_text,'MaxFragments=1, MaxWords=50, MinWords=40')
+FROM fts_filter f
 CROSS JOIN query_cte q
 LEFT JOIN leki l ON f.id_produktu = l.id_produktu
 LEFT JOIN fragmenty fr ON f.id_fragmentu = fr.id_fragmentu

@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, Response
 import json
 import psycopg2.extras
-from .db_helper import get_db_connection
+from .db_helper import get_db_connection, log_query
 from .roberta import model
 import os
 
@@ -28,6 +28,7 @@ def search():
     rows = cur.fetchall()
     results = [dict(row) for row in rows]
     cur.close()
+    log_query(conn=conn, is_index=True, query_name=q.replace(" OR ", " "))
     conn.close()
 
     return Response(
@@ -37,6 +38,7 @@ def search():
 
 @api_bp.route("/leki/<int:id_produktu>", methods=["GET"])
 def get_leki(id_produktu):
+    return jsonify({"error": "bad_url"})
     conn = get_db_connection()
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     
